@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Design Tokens ────────────────────────────── */
+@theme {
+  --color-ivory:      #F8F4EE;
+  --color-cream:      #EFE8DC;
+  --color-sand:       #DDD0C0;
+  --color-clay:       #A8784A;
+  --color-clay-light: #C8A07A;
+  --color-charcoal:   #1A1510;
+  --color-muted:      #7A6E64;
+
+  --font-heading: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-body:    var(--font-dm-sans), system-ui, -apple-system, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Reset cursor globally ───────────────────── */
+*, *::before, *::after {
+  cursor: none !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ─────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F8F4EE;
+  color: #1A1510;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+/* ── Typography defaults ──────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+/* ── Utility: section label ───────────────────── */
+.label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #A8784A;
+  font-weight: 500;
+}
+.label::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #A8784A;
+}
+
+/* ── Video fills ──────────────────────────────── */
+video { display: block; }
+
+/* ── Smooth section transitions ───────────────── */
+section { position: relative; }
