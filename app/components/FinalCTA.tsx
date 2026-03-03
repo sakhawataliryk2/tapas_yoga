@@ -1,5 +1,5 @@
 "use client";
-const CALENDLY = "https://calendly.com/zengmin022/30min?month=2026-02";
+import { CALENDLY } from "../data/products";
 
 export default function FinalCTA() {
   return (

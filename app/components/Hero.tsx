@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-
-const CALENDLY = "https://calendly.com/zengmin022/30min?month=2026-02";
+import { CALENDLY } from "../data/products";
 const VIDEO_URL =
   "https://video.gumlet.io/67f02e049eef3d88099c9644/698c36e4aec3d4e4200257e7/download.mp4";
 
@@ -9,7 +8,7 @@ const PROOF = [
   "5.0 · 28 Google Reviews",
   "250+ Graduates",
   "37 Countries",
-  "Yoga Alliance RYS 200",
+  "Bali · Greece · Zanzibar",
   "Payment Plans Available",
 ];
 
@@ -61,7 +60,7 @@ export default function Hero() {
               className="text-white/70 tracking-[0.3em] uppercase"
               style={{ fontFamily: "var(--font-body)", fontSize: "0.6875rem", fontWeight: 500 }}
             >
-              Yoga Alliance Certified · 200-Hour
+              Yoga Alliance Certified · Teacher Trainings
             </span>
             <div className="h-px w-10 bg-white/30" />
           </div>
@@ -88,7 +87,7 @@ export default function Hero() {
               Certified
             </em>
             <br />
-            Yoga Teacher in Bali
+            Yoga Teacher
           </h1>
 
           {/* CTAs */}

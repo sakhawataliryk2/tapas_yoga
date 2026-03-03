@@ -9,8 +9,9 @@ const FEATURES = [
 ];
 
 const SLIDES = [
-  { src: "/_LR_0381-Enhanced-NR.jpeg", label: "Training in session" },
-  { src: "/_LR_0801-Enhanced-NR.jpeg", label: "Graduation celebration" },
+  { src: "/group-session-4.jpeg", label: "Training in session" },
+  { src: "/group-session-2.jpeg", label: "Community & connection" },
+  { src: "/solo-2.jpg", label: "Vivienne Zeng · Lead instructor" },
 ];
 
 export default function YogaAlliance() {

@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 
-const CALENDLY = "https://calendly.com/zengmin022/30min?month=2026-02";
-const INSTAGRAM = "https://www.instagram.com/vivienne_zeng/";
+import { CALENDLY, INSTAGRAM } from "../data/products";
 const VIVIENNE_VIDEO =
   "https://video.gumlet.io/67f02e049eef3d88099c9644/698c36e4aec3d4e4200257e7/download.mp4";
 
@@ -46,7 +45,7 @@ export default function Founder() {
               style={{ aspectRatio: "4/5" }}
             >
               <Image
-                src="/2F26C35D-ACB9-454F-A5B7-142A034BB13C.jpg"
+                src="/solo-1.jpg"
                 alt="Vivienne Zeng — Founder & Lead Instructor"
                 fill
                 className="object-cover object-center"

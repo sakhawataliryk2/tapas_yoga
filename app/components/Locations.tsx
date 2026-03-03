@@ -11,7 +11,7 @@ const FEATURES = [
   {
     n: "02",
     title: "Boutique Comfort, Not Mass Tourism",
-    body: "Small, Balinese-owned resorts chosen for quality, privacy, and atmosphere.",
+    body: "Small, locally-owned venues chosen for quality, privacy, and atmosphere.",
   },
   {
     n: "03",
@@ -20,18 +20,14 @@ const FEATURES = [
   },
 ];
 
-// Real photos first, gradient placeholders for remaining slots
 const SLIDES: Array<
   | { type: "photo"; src: string; label: string }
   | { type: "gradient"; bg: string; label: string }
 > = [
-  { type: "photo", src: "/_LR_0381-Enhanced-NR.jpeg", label: "Yoga shala" },
-  { type: "photo", src: "/_LR_0801-Enhanced-NR.jpeg", label: "Graduation ceremony" },
-  { type: "photo", src: "/c27215725u6fa96652cb647b214f528c.jpg", label: "Practice studio" },
-  { type: "gradient", bg: "#C4B298", label: "Pool area" },
-  { type: "gradient", bg: "#DAC8B4", label: "Accommodation" },
-  { type: "gradient", bg: "#C8B89E", label: "Meditation garden" },
-  { type: "gradient", bg: "#D4C2AC", label: "Dining area" },
+  { type: "photo", src: "/group-session-1.jpeg", label: "Meditation practice" },
+  { type: "photo", src: "/group-session-2.jpeg", label: "Community & connection" },
+  { type: "photo", src: "/group-session-3.jpeg", label: "Celebration" },
+  { type: "photo", src: "/group-session-4.jpeg", label: "Group practice" },
 ];
 
 export default function Locations() {
@@ -47,7 +43,7 @@ export default function Locations() {
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-          {/* ── Carousel ── */}
+          {/* Carousel */}
           <div className="relative overflow-hidden" style={{ height: "clamp(380px, 50vw, 580px)" }}>
             {SLIDES.map((s, i) => (
               <div
@@ -116,7 +112,7 @@ export default function Locations() {
             </div>
           </div>
 
-          {/* ── Text ── */}
+          {/* Text */}
           <div>
             <div className="label mb-10">Venues</div>
             <h2
@@ -137,8 +133,9 @@ export default function Locations() {
               style={{ fontFamily: "var(--font-body)", fontSize: "1.0625rem", color: "#7A6E64", lineHeight: 1.75 }}
               className="mb-14"
             >
-              After hosting 35+ trainings in Bali, we carefully choose spaces that
-              truly support focus, learning, and transformation.
+              From Bali to Greece to Zanzibar — after hosting 35+ trainings, we
+              carefully choose spaces that truly support focus, learning, and
+              transformation.
             </p>
 
             <div className="space-y-8">

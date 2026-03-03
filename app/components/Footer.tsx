@@ -1,8 +1,6 @@
 "use client";
 
-const INSTAGRAM = "https://www.instagram.com/vivienne_zeng/";
-const WHATSAPP = "https://wa.me/8613816920709";
-const CALENDLY = "https://calendly.com/zengmin022/30min?month=2026-02";
+import { INSTAGRAM, WHATSAPP, CALENDLY } from "../data/products";
 
 export default function Footer() {
   const linkStyle: React.CSSProperties = {
@@ -21,19 +19,19 @@ export default function Footer() {
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://framerusercontent.com/images/2ZBo8ZeA8KOXumwOrBjQCVmlQn8.svg"
+              src="/logo-clay.svg"
               alt="The Tapas Yoga School"
-              style={{ height: "18px", width: "auto", marginBottom: "12px" }}
+              style={{ height: "44px", width: "auto", marginBottom: "12px" }}
             />
             <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#7A6E64", letterSpacing: "0.08em" }}>
-              200-Hour Yoga Teacher Training · Bali
+              Yoga Teacher Trainings · Bali · Greece · Zanzibar
             </p>
           </div>
 
           {/* Nav */}
           <div className="flex flex-wrap gap-8">
             {[
-              { label: "Yoga Alliance", href: "#yoga-alliance" },
+              { label: "Trainings", href: "#trainings" },
               { label: "About", href: "#founder" },
               { label: "Pricing", href: "#pricing" },
               { label: "FAQs", href: "#faq" },

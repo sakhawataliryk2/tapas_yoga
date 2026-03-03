@@ -34,6 +34,14 @@ const FAQS = [
     q: "Can I work or stay connected during the training?",
     a: "Yes, Wi-Fi is available and you can use your laptop during off-hours. We recommend keeping work minimal to get the full experience.",
   },
+  {
+    q: "What's the difference between the 200HR and 100HR training?",
+    a: "The 200HR Foundation is a complete certification for aspiring yoga teachers — it covers everything from asana to philosophy to teaching methodology over 21 days. The 100HR Advanced is designed for graduates who want to deepen their skills with advanced sequencing, alignment, and teaching techniques over 11 days.",
+  },
+  {
+    q: "Is accommodation included in all trainings?",
+    a: "It depends on the program. The 200HR Bali training offers all-inclusive packages with accommodation and meals. The 100HR Advanced does not include accommodation — you arrange your own stay. The Zanzibar TTC offers both options: with or without accommodation.",
+  },
 ];
 
 export default function FAQ() {

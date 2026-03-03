@@ -1,13 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
 
+import { CALENDLY } from "../data/products";
+
 const NAV_LINKS = [
+  { label: "Trainings", href: "#trainings" },
   { label: "About Us", href: "#founder" },
-  { label: "Yoga Alliance", href: "#yoga-alliance" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "FAQs", href: "#faq" },
 ];
-const CALENDLY = "https://calendly.com/zengmin022/30min?month=2026-02";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,12 +45,11 @@ export default function Nav() {
         <a href="#" className="flex items-center" style={{ opacity: 0.92 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://framerusercontent.com/images/2ZBo8ZeA8KOXumwOrBjQCVmlQn8.svg"
+            src={scrolled ? "/logo-clay.svg" : "/logo.svg"}
             alt="The Tapas Yoga School"
             style={{
-              height: "18px",
+              height: "44px",
               width: "auto",
-              filter: scrolled ? "none" : "brightness(0) invert(1)",
             }}
           />
         </a>

@@ -1,5 +1,6 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import Trainings from "./components/Trainings";
 import TrainingDetails from "./components/TrainingDetails";
 import YogaAlliance from "./components/YogaAlliance";
 import WhatYoullLearn from "./components/WhatYoullLearn";
@@ -19,6 +20,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Trainings />
         <TrainingDetails />
         <YogaAlliance />
         <WhatYoullLearn />

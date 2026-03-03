@@ -1,8 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
-
-const TARGET = new Date("2026-04-05T10:00:00Z"); // 6 PM Bali (UTC+8)
-const CALENDLY = "https://calendly.com/zengmin022/30min?month=2026-02";
+import { useEffect, useMemo, useState } from "react";
+import { CALENDLY, getNextSession, getAllUpcomingSessions } from "../data/products";
 
 function pad(n: number) {
   return String(n).padStart(2, "0");
@@ -11,9 +9,14 @@ function pad(n: number) {
 export default function TrainingDetails() {
   const [time, setTime] = useState({ d: 0, h: 0, m: 0, s: 0 });
 
+  const next = useMemo(() => getNextSession(), []);
+  const allSessions = useMemo(() => getAllUpcomingSessions(), []);
+
   useEffect(() => {
+    if (!next) return;
+    const target = new Date(next.session.start + "T10:00:00Z"); // 6 PM Bali (UTC+8)
     const tick = () => {
-      const diff = TARGET.getTime() - Date.now();
+      const diff = target.getTime() - Date.now();
       if (diff <= 0) return;
       setTime({
         d: Math.floor(diff / 86_400_000),
@@ -25,7 +28,7 @@ export default function TrainingDetails() {
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [next]);
 
   const units = [
     { value: time.d, label: "Days" },
@@ -33,6 +36,14 @@ export default function TrainingDetails() {
     { value: time.m, label: "Minutes" },
     { value: time.s, label: "Seconds" },
   ];
+
+  // Format the next session heading
+  const nextLabel = next
+    ? `${next.session.label}, 2026`
+    : "Coming Soon";
+  const nextSub = next
+    ? `${next.session.location} · ${next.product.shortName}`
+    : "";
 
   return (
     <section id="training-details" style={{ backgroundColor: "#EFE8DC" }} className="py-32 lg:py-44">
@@ -51,7 +62,7 @@ export default function TrainingDetails() {
           }}
           className="mb-3"
         >
-          April 5 – 25, 2026
+          {nextLabel}
         </h2>
         <p
           style={{
@@ -62,7 +73,7 @@ export default function TrainingDetails() {
           }}
           className="mb-20 uppercase"
         >
-          Canggu · Bali · 21-Day Immersive
+          {nextSub}
         </p>
 
         {/* Countdown */}
@@ -108,9 +119,9 @@ export default function TrainingDetails() {
         {/* Details row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14 text-left max-w-2xl mx-auto">
           {[
-            { l: "Venue", v: "United Colors of Bali", s: "Canggu, Bali" },
-            { l: "Dates", v: "Apr 5 – Apr 25", s: "Sunday to Saturday" },
-            { l: "Availability", v: "7 Spots Left", s: "Limited enrollment" },
+            { l: "Venue", v: next?.session.location.split(",")[0] || "TBA", s: next?.session.location || "" },
+            { l: "Dates", v: next?.session.label || "TBA", s: "Immersive training" },
+            { l: "Availability", v: "Limited Spots", s: "Small group enrollment" },
           ].map(({ l, v, s }) => (
             <div key={l} className="bg-ivory p-6">
               <p
@@ -163,12 +174,51 @@ export default function TrainingDetails() {
           </span>
         </a>
 
-        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", color: "#7A6E64" }} className="mt-4">
-          Can&apos;t make the next start?{" "}
-          <span style={{ color: "#A8784A", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-            View all 2026 training dates
-          </span>
-        </p>
+        {/* All 2026 Dates grid */}
+        <div id="all-dates" className="mt-20">
+          <div className="flex items-center gap-6 mb-10 max-w-xs mx-auto">
+            <div className="flex-1 h-px bg-sand" />
+            <div className="w-1 h-1 rounded-full bg-clay" />
+            <div className="flex-1 h-px bg-sand" />
+          </div>
+
+          <h3
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontWeight: 400,
+              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
+              color: "#1A1510",
+              letterSpacing: "-0.01em",
+            }}
+            className="mb-10"
+          >
+            All 2026{" "}
+            <em style={{ fontStyle: "italic" }}>Training Dates</em>
+          </h3>
+
+          <div className="space-y-2 max-w-2xl mx-auto text-left">
+            {allSessions.map(({ product, session }, i) => (
+              <div
+                key={i}
+                className="grid grid-cols-3 gap-4 py-4 px-6 items-center"
+                style={{
+                  backgroundColor: "#F8F4EE",
+                  borderBottom: i < allSessions.length - 1 ? "1px solid #EFE8DC" : "none",
+                }}
+              >
+                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", fontWeight: 500, color: "#A8784A" }}>
+                  {product.shortName}
+                </span>
+                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#1A1510" }}>
+                  {session.label}
+                </span>
+                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", color: "#7A6E64", textAlign: "right" }}>
+                  {session.location}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

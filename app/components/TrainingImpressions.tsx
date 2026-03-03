@@ -1,8 +1,6 @@
+import Image from "next/image";
+
 const CLIPS = [
-  {
-    label: "Training clip 1",
-    url: "https://video.gumlet.io/67f02e049eef3d88099c9644/698c35ecfc23d3d76fe7f2bb/download.mp4",
-  },
   {
     label: "Training clip 2",
     url: "https://video.gumlet.io/67f02e049eef3d88099c9644/698c44af5e94c7f61bedbb8a/download.mp4",
@@ -20,7 +18,7 @@ export default function TrainingImpressions() {
 
         {/* Header */}
         <div className="mb-16 text-center">
-          <div className="label justify-center mb-10">Inside the Training</div>
+          <div className="label justify-center mb-10">Inside the Trainings</div>
           <h2
             style={{
               fontFamily: "var(--font-heading)",
@@ -32,25 +30,21 @@ export default function TrainingImpressions() {
             }}
             className="mb-5"
           >
-            Impressions from the Training
+            Impressions from Our Trainings
           </h2>
           <p
             style={{ fontFamily: "var(--font-body)", fontSize: "1.0625rem", color: "#7A6E64", lineHeight: 1.75 }}
             className="max-w-lg mx-auto"
           >
-            A glimpse into daily life, practice, and community during the
-            200-Hour Yoga Teacher Training.
+            A glimpse into daily life, practice, and community during our
+            Yoga Teacher Trainings.
           </p>
         </div>
 
-        {/*
-          Desktop: asymmetric grid — clip 1 tall on left (3/5 width),
-          clips 2 & 3 stacked on right (2/5 width).
-          Mobile: all three stacked full-width.
-        */}
+        {/* Mixed grid: photo left, 2 videos right */}
         <div className="flex flex-col lg:flex-row gap-3">
 
-          {/* Left — feature clip, portrait-ish */}
+          {/* Left — feature photo */}
           <div
             className="relative w-full overflow-hidden"
             style={{
@@ -59,21 +53,25 @@ export default function TrainingImpressions() {
               flex: "3",
             }}
           >
-            <video
-              src={CLIPS[0].url}
-              controls
-              playsInline
-              preload="metadata"
-              className="absolute inset-0 w-full h-full object-cover"
+            <Image
+              src="/group-session-5.JPG"
+              alt="Ceremony circle during training"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 60vw"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to top, rgba(20,15,10,0.25) 0%, transparent 30%)" }}
             />
           </div>
 
-          {/* Right column — two clips stacked */}
+          {/* Right column — two video clips stacked */}
           <div
             className="flex flex-col gap-3"
             style={{ flex: "2" }}
           >
-            {CLIPS.slice(1).map(({ label, url }) => (
+            {CLIPS.map(({ label, url }) => (
               <div
                 key={label}
                 className="relative overflow-hidden"

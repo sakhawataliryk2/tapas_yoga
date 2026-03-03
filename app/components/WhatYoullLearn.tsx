@@ -161,7 +161,7 @@ export default function WhatYoullLearn() {
         </div>
 
         {/* PDF download CTA */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 py-8 border-t border-sand">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 py-8">
           <div>
             <p style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "1rem", color: "#1A1510", marginBottom: "4px" }}>
               Want the full picture?
