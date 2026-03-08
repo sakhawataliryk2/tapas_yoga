@@ -116,7 +116,7 @@ export default function Testimonials() {
   const t = TEXT_TESTIMONIALS[current];
 
   return (
-    <section id="testimonials" style={{ backgroundColor: "#EFE8DC" }} className="py-32 lg:py-44">
+    <section id="testimonials" style={{ backgroundColor: "#EFE8DC" }} className="py-20 lg:py-44">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Header */}

@@ -25,7 +25,7 @@ export default function Pricing() {
     ({ fontFamily: "var(--font-body)", fontSize: size, fontWeight: weight, color } as React.CSSProperties);
 
   return (
-    <section id="pricing" style={{ backgroundColor: "#EFE8DC" }} className="py-32 lg:py-44">
+    <section id="pricing" style={{ backgroundColor: "#EFE8DC" }} className="py-20 lg:py-44">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Header */}
@@ -50,8 +50,8 @@ export default function Pricing() {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="flex gap-0 border-b" style={{ borderColor: "#DDD0C0" }}>
+        <div className="flex justify-center mb-12 overflow-x-auto">
+          <div className="flex gap-0 border-b flex-nowrap" style={{ borderColor: "#DDD0C0" }}>
             {PRODUCTS.map((p, i) => (
               <button
                 key={p.id}
@@ -159,7 +159,7 @@ function PricingContent({
         {product.tiers.map(({ name, price, earlyBird, note, featured, deposit }, i) => (
           <div
             key={name}
-            className="flex flex-col p-10 lg:p-12"
+            className="flex flex-col p-6 sm:p-8 lg:p-12"
             style={{
               backgroundColor: featured ? "#1A1510" : "#F8F4EE",
               borderRight: i < tierCount - 1 ? "1px solid #DDD0C0" : "none",
@@ -324,7 +324,7 @@ function PricingContent({
         className={`grid grid-cols-1 md:grid-cols-2 gap-0 ${maxWidth}`}
         style={{ border: "1px solid #DDD0C0", borderTop: "none", backgroundColor: "#F8F4EE" }}
       >
-        <div className="p-10 lg:p-12" style={{ borderRight: "1px solid #DDD0C0" }}>
+        <div className="p-6 sm:p-8 lg:p-12" style={{ borderRight: "1px solid #DDD0C0" }}>
           <h3 style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "1rem", color: "#1A1510", marginBottom: "24px" }}>
             All packages include
           </h3>
@@ -340,7 +340,7 @@ function PricingContent({
             ))}
           </ul>
         </div>
-        <div className="p-10 lg:p-12">
+        <div className="p-6 sm:p-8 lg:p-12">
           <h3 style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "1rem", color: "#1A1510", marginBottom: "24px" }}>
             Payment details
           </h3>

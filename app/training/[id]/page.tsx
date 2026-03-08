@@ -31,7 +31,7 @@ export default async function TrainingDetailPage({
 
         {/* ── Content ── */}
         <div style={{ backgroundColor: "#F8F4EE" }}>
-          <div className="max-w-7xl mx-auto px-6 lg:px-14 py-20 lg:py-28">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-14 py-12 sm:py-16 lg:py-28">
 
             {/* Breadcrumb + label */}
             <div className="flex items-center gap-2 mb-8" style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#7A6E64" }}>
@@ -73,7 +73,7 @@ export default async function TrainingDetailPage({
             </h1>
 
             {/* Two-column layout: description + highlights */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-16 lg:mb-20">
 
               {/* Left: description + includes */}
               <div className="lg:col-span-7">
@@ -159,7 +159,7 @@ export default async function TrainingDetailPage({
                 {product.sessions.map((session, i) => (
                   <div
                     key={i}
-                    className="grid grid-cols-2 gap-4 py-5 px-6 items-center"
+                    className="flex flex-col sm:grid sm:grid-cols-2 gap-3 sm:gap-4 py-4 sm:py-5 px-5 sm:px-6"
                     style={{ backgroundColor: "#EFE8DC", borderBottom: i < product.sessions.length - 1 ? "1px solid #DDD0C0" : "none" }}
                   >
                     <div>

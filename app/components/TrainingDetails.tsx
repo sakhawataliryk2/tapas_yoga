@@ -45,7 +45,7 @@ export default function TrainingDetails() {
     : "";
 
   return (
-    <section id="training-details" style={{ backgroundColor: "#EFE8DC" }} className="py-32 lg:py-44">
+    <section id="training-details" style={{ backgroundColor: "#EFE8DC" }} className="py-20 lg:py-44">
       <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
 
         <div className="label justify-center mb-10">Next Training</div>
@@ -207,12 +207,11 @@ export default function TrainingDetails() {
               <Link
                 key={i}
                 href={`/training/${product.id}`}
-                className="grid gap-4 py-4 px-6 items-center group transition-colors"
+                className="flex flex-col sm:grid gap-3 sm:gap-4 py-4 px-5 sm:px-6 group transition-colors"
                 style={{
                   gridTemplateColumns: "1fr 1fr auto",
                   backgroundColor: "#F8F4EE",
                   borderBottom: i < allSessions.length - 1 ? "1px solid #EFE8DC" : "none",
-                  display: "grid",
                   textDecoration: "none",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#DDD0C0")}

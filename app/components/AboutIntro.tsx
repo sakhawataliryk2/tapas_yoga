@@ -33,7 +33,7 @@ export default function AboutIntro() {
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Top grid: text + video */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center mb-16 lg:mb-24">
 
           {/* Left: intro text */}
           <div>
@@ -159,13 +159,12 @@ export default function AboutIntro() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0" style={{ border: "1px solid #DDD0C0" }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x" style={{ border: "1px solid #DDD0C0", borderColor: "#DDD0C0" }}>
             {HIGHLIGHTS.map(({ name, program, quote }, i) => (
               <div
                 key={name}
-                className="p-8 lg:p-10"
+                className="p-6 lg:p-10"
                 style={{
-                  borderRight: i < HIGHLIGHTS.length - 1 ? "1px solid #DDD0C0" : "none",
                   backgroundColor: "#F8F4EE",
                 }}
               >

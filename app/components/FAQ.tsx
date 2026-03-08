@@ -48,9 +48,9 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" style={{ backgroundColor: "#F8F4EE" }} className="py-32 lg:py-44">
+    <section id="faq" style={{ backgroundColor: "#F8F4EE" }} className="py-20 lg:py-44">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
 
           {/* Left: title */}
           <div className="lg:col-span-4">

@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           {/* Social + CTA */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" style={linkStyle}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#1A1510")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#7A6E64")}

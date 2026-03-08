@@ -42,7 +42,7 @@ export default async function CheckoutPage({
       </header>
 
       <main style={{ backgroundColor: "#F8F4EE", minHeight: "100vh" }}>
-        <div className="max-w-4xl mx-auto px-6 lg:px-14 py-20 lg:py-28">
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-14 py-12 sm:py-16 lg:py-28">
 
           {/* Header */}
           <div className="mb-16">

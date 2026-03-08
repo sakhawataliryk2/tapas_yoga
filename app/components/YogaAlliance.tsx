@@ -23,7 +23,7 @@ export default function YogaAlliance() {
   }, []);
 
   return (
-    <section id="yoga-alliance" style={{ backgroundColor: "#F8F4EE" }} className="py-32 lg:py-44">
+    <section id="yoga-alliance" style={{ backgroundColor: "#F8F4EE" }} className="py-20 lg:py-44">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-center">
 

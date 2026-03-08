@@ -108,7 +108,7 @@ export default function WhatYoullLearn() {
   const [active, setActive] = useState<"200hr" | "100hr">("200hr");
 
   return (
-    <section id="what-youll-learn" style={{ backgroundColor: "#EFE8DC" }} className="py-32 lg:py-44">
+    <section id="what-youll-learn" style={{ backgroundColor: "#EFE8DC" }} className="py-20 lg:py-44">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Header */}
@@ -179,7 +179,7 @@ export default function WhatYoullLearn() {
             {PILLARS_200.map(({ n, title, body, icon }) => (
               <div
                 key={n}
-                className="p-10 lg:p-12 group transition-colors"
+                className="p-6 lg:p-12 group transition-colors"
                 style={{ borderRight: "1px solid #DDD0C0", borderBottom: "1px solid #DDD0C0" }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(248,244,238,0.7)")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
@@ -214,7 +214,7 @@ export default function WhatYoullLearn() {
               {CURRICULUM_100.map((item, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-4 px-10 py-6"
+                  className="flex items-center gap-4 px-5 py-5 sm:px-8"
                   style={{
                     borderBottom: i < CURRICULUM_100.length - 2 || (CURRICULUM_100.length % 2 !== 0 && i < CURRICULUM_100.length - 1) ? "1px solid #DDD0C0" : "none",
                     borderRight: i % 2 === 0 ? "1px solid #DDD0C0" : "none",
