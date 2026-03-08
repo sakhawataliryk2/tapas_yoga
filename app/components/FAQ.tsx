@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "What is your cancellation / transfer policy?",
-    a: "The $470 deposit is non-refundable, but can be transferred to a future training within a set period (see booking terms for details).",
+    a: "For the 200HR and 100HR trainings, the $470 deposit is non-refundable but can be transferred to a future training. For the Zanzibar TTC, a 50% deposit is required to reserve your place — it is non-refundable but may be transferred to another student. The remaining balance is due 90 days before training begins.",
   },
   {
     q: "Can I work or stay connected during the training?",
@@ -40,7 +40,7 @@ const FAQS = [
   },
   {
     q: "Is accommodation included in all trainings?",
-    a: "It depends on the program. The 200HR Bali training offers all-inclusive packages with accommodation and meals. The 100HR Advanced does not include accommodation — you arrange your own stay. The Zanzibar TTC offers both options: with or without accommodation.",
+    a: "It depends on the program. The 200HR Bali training offers all-inclusive packages with accommodation and meals. The 100HR Advanced does not include accommodation — you arrange your own stay. The Zanzibar TTC offers three options: certification with shared accommodation & breakfast ($5,500), certification without accommodation ($3,500), or a 15-class asana intensive without certification ($1,500).",
   },
 ];
 

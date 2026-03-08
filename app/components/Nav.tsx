@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 import { CALENDLY } from "../data/products";
 
@@ -13,6 +14,9 @@ const NAV_LINKS = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const link = (anchor: string) => isHome ? anchor : `/${anchor}`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -42,7 +46,7 @@ export default function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-14 h-20 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center" style={{ opacity: 0.92 }}>
+        <a href={isHome ? "#" : "/"} className="flex items-center" style={{ opacity: 0.92 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={scrolled ? "/logo-clay.svg" : "/logo.svg"}
@@ -56,10 +60,10 @@ export default function Nav() {
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-10">
-          {NAV_LINKS.map((link) => (
+          {NAV_LINKS.map((navLink) => (
             <a
-              key={link.label}
-              href={link.href}
+              key={navLink.label}
+              href={link(navLink.href)}
               className="transition-colors"
               style={{
                 ...bodyFont,
@@ -74,7 +78,7 @@ export default function Nav() {
                   : "rgba(255,255,255,0.75)")
               }
             >
-              {link.label}
+              {navLink.label}
             </a>
           ))}
           <a
@@ -125,15 +129,15 @@ export default function Nav() {
           className="md:hidden px-6 py-8 flex flex-col gap-6 border-t"
           style={{ backgroundColor: "#F8F4EE", borderColor: "#DDD0C0" }}
         >
-          {NAV_LINKS.map((link) => (
+          {NAV_LINKS.map((navLink) => (
             <a
-              key={link.label}
-              href={link.href}
+              key={navLink.label}
+              href={link(navLink.href)}
               className="text-muted"
               style={bodyFont}
               onClick={() => setMenuOpen(false)}
             >
-              {link.label}
+              {navLink.label}
             </a>
           ))}
           <a

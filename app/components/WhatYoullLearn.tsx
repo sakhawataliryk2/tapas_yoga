@@ -1,9 +1,10 @@
 "use client";
+import { useState } from "react";
 
 // TODO: Replace PDF_URL with the actual curriculum PDF link from client
 const PDF_URL = "#";
 
-const PILLARS = [
+const PILLARS_200 = [
   {
     n: "01",
     title: "Teach with confidence",
@@ -79,6 +80,19 @@ const PILLARS = [
   },
 ];
 
+const CURRICULUM_100 = [
+  "Meditation and Philosophy",
+  "Advanced Asana Practice",
+  "Universal Principles of Alignment",
+  "Refined Cueing",
+  "Alignment & Misalignment Clinic",
+  "Hands-on & Verbal Adjustments",
+  "Intelligent Sequencing Study",
+  "Teaching Methodology",
+  "Yoga Ethics & Professionalism",
+  "Intelligent Self-Practice Programs",
+];
+
 function PdfIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -91,12 +105,14 @@ function PdfIcon() {
 }
 
 export default function WhatYoullLearn() {
+  const [active, setActive] = useState<"200hr" | "100hr">("200hr");
+
   return (
     <section id="what-youll-learn" style={{ backgroundColor: "#EFE8DC" }} className="py-32 lg:py-44">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-20">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
           <div>
             <div className="label mb-10">Curriculum</div>
             <h2
@@ -128,37 +144,101 @@ export default function WhatYoullLearn() {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ borderTop: "1px solid #DDD0C0", borderLeft: "1px solid #DDD0C0" }}>
-          {PILLARS.map(({ n, title, body, icon }) => (
-            <div
-              key={n}
-              className="p-10 lg:p-12 group transition-colors"
-              style={{ borderRight: "1px solid #DDD0C0", borderBottom: "1px solid #DDD0C0" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(248,244,238,0.7)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+        {/* Tabs */}
+        <div className="flex gap-0 border-b mb-12" style={{ borderColor: "#DDD0C0" }}>
+          {(["200hr", "100hr"] as const).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActive(tab)}
+              className="px-6 md:px-10 py-4 transition-colors relative"
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.75rem",
+                letterSpacing: "0.1em",
+                fontWeight: active === tab ? 600 : 400,
+                color: active === tab ? "#A8784A" : "#7A6E64",
+                textTransform: "uppercase",
+                backgroundColor: "transparent",
+                border: "none",
+              }}
             >
-              <div className="flex items-start justify-between mb-8">
-                <div style={{ color: "#A8784A", opacity: 0.6 }}>{icon}</div>
-                <span style={{
-                  fontFamily: "var(--font-heading)",
-                  fontStyle: "italic",
-                  fontSize: "0.875rem",
-                  color: "#A8784A",
-                  opacity: 0.45,
-                }}>
-                  {n}
-                </span>
-              </div>
-              <h3 style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "1rem", color: "#1A1510", marginBottom: "8px" }}>
-                {title}
-              </h3>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#7A6E64", lineHeight: 1.7 }}>
-                {body}
-              </p>
-            </div>
+              {tab === "200hr" ? "200HR Foundation" : "100HR Advanced"}
+              {active === tab && (
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-0.5"
+                  style={{ backgroundColor: "#A8784A" }}
+                />
+              )}
+            </button>
           ))}
         </div>
+
+        {/* 200HR: Pillar grid */}
+        {active === "200hr" && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ borderTop: "1px solid #DDD0C0", borderLeft: "1px solid #DDD0C0" }}>
+            {PILLARS_200.map(({ n, title, body, icon }) => (
+              <div
+                key={n}
+                className="p-10 lg:p-12 group transition-colors"
+                style={{ borderRight: "1px solid #DDD0C0", borderBottom: "1px solid #DDD0C0" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(248,244,238,0.7)")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                <div className="flex items-start justify-between mb-8">
+                  <div style={{ color: "#A8784A", opacity: 0.6 }}>{icon}</div>
+                  <span style={{
+                    fontFamily: "var(--font-heading)",
+                    fontStyle: "italic",
+                    fontSize: "0.875rem",
+                    color: "#A8784A",
+                    opacity: 0.45,
+                  }}>
+                    {n}
+                  </span>
+                </div>
+                <h3 style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "1rem", color: "#1A1510", marginBottom: "8px" }}>
+                  {title}
+                </h3>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#7A6E64", lineHeight: 1.7 }}>
+                  {body}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* 100HR: List */}
+        {active === "100hr" && (
+          <div style={{ border: "1px solid #DDD0C0", backgroundColor: "#F8F4EE" }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+              {CURRICULUM_100.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-4 px-10 py-6"
+                  style={{
+                    borderBottom: i < CURRICULUM_100.length - 2 || (CURRICULUM_100.length % 2 !== 0 && i < CURRICULUM_100.length - 1) ? "1px solid #DDD0C0" : "none",
+                    borderRight: i % 2 === 0 ? "1px solid #DDD0C0" : "none",
+                  }}
+                >
+                  <span style={{
+                    fontFamily: "var(--font-heading)",
+                    fontStyle: "italic",
+                    fontSize: "0.875rem",
+                    color: "#A8784A",
+                    opacity: 0.5,
+                    flexShrink: 0,
+                    minWidth: "28px",
+                  }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", fontWeight: 500, color: "#1A1510" }}>
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* PDF download CTA */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 py-8">

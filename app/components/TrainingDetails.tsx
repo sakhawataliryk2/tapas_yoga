@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { CALENDLY, getNextSession, getAllUpcomingSessions } from "../data/products";
 
 function pad(n: number) {
@@ -38,11 +39,9 @@ export default function TrainingDetails() {
   ];
 
   // Format the next session heading
-  const nextLabel = next
-    ? `${next.session.label}, 2026`
-    : "Coming Soon";
+  const nextLabel = next ? next.product.name : "Coming Soon";
   const nextSub = next
-    ? `${next.session.location} · ${next.product.shortName}`
+    ? `${next.session.label}, 2026 · ${next.session.location}`
     : "";
 
   return (
@@ -51,7 +50,7 @@ export default function TrainingDetails() {
 
         <div className="label justify-center mb-10">Next Training</div>
 
-        {/* Date heading */}
+        {/* Event heading */}
         <h2
           style={{
             fontFamily: "var(--font-heading)",
@@ -59,10 +58,17 @@ export default function TrainingDetails() {
             fontSize: "clamp(2.5rem, 6vw, 5rem)",
             color: "#1A1510",
             letterSpacing: "-0.02em",
+            lineHeight: 1.05,
           }}
           className="mb-3"
         >
-          {nextLabel}
+          {nextLabel.includes("Teacher Training") ? (
+            <>
+              {nextLabel.replace("Teacher Training", "").trim()}
+              <br />
+              <em style={{ fontStyle: "italic" }}>Teacher Training</em>
+            </>
+          ) : nextLabel}
         </h2>
         <p
           style={{
@@ -198,24 +204,43 @@ export default function TrainingDetails() {
 
           <div className="space-y-2 max-w-2xl mx-auto text-left">
             {allSessions.map(({ product, session }, i) => (
-              <div
+              <Link
                 key={i}
-                className="grid grid-cols-3 gap-4 py-4 px-6 items-center"
+                href={`/training/${product.id}`}
+                className="grid gap-4 py-4 px-6 items-center group transition-colors"
                 style={{
+                  gridTemplateColumns: "1fr 1fr auto",
                   backgroundColor: "#F8F4EE",
                   borderBottom: i < allSessions.length - 1 ? "1px solid #EFE8DC" : "none",
+                  display: "grid",
+                  textDecoration: "none",
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#DDD0C0")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#F8F4EE")}
               >
-                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", fontWeight: 500, color: "#A8784A" }}>
-                  {product.shortName}
-                </span>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#1A1510" }}>
+                <div>
+                  <span style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", fontWeight: 500, color: "#1A1510", display: "block" }}>
+                    {product.shortName}
+                  </span>
+                  <span style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#7A6E64" }}>
+                    {session.location}
+                  </span>
+                </div>
+                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#7A6E64" }}>
                   {session.label}
                 </span>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", color: "#7A6E64", textAlign: "right" }}>
-                  {session.location}
+                <span style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.625rem",
+                  letterSpacing: "0.18em",
+                  fontWeight: 600,
+                  color: "#A8784A",
+                  textTransform: "uppercase",
+                  whiteSpace: "nowrap",
+                }}>
+                  View details →
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

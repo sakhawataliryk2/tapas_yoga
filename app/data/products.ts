@@ -18,6 +18,14 @@ export interface Tier {
   earlyBird?: string;
   note: string;
   featured?: boolean;
+  deposit?: string; // override the default deposit label
+}
+
+export interface ProductDetail {
+  tagline: string;
+  description: string[];
+  highlights: { label: string; value: string }[];
+  images: { src: string; alt: string }[];
 }
 
 export interface Product {
@@ -32,6 +40,10 @@ export interface Product {
   payment: string[];
   earlyBirdRule?: string;
   callout?: string;    // prominent callout like "Food & accommodation NOT included"
+  detail: ProductDetail;
+  // Stripe links — replace placeholders with real product links
+  stripeDepositUrl: string;
+  stripeFullUrl: string;
 }
 
 // ── Products ──
@@ -59,14 +71,14 @@ export const PRODUCTS: Product[] = [
         name: "Training + Shared Suite + Meals",
         price: "$4,470",
         earlyBird: "$4,170",
-        note: "21 nights shared room · All meals",
+        note: "21 nights shared room · 2 meals",
         featured: true,
       },
       {
         name: "Training + Private Room + Meals",
         price: "$5,070",
         earlyBird: "$4,770",
-        note: "21 nights private room · All meals",
+        note: "21 nights private room · 2 meals",
         featured: false,
       },
     ],
@@ -79,11 +91,36 @@ export const PRODUCTS: Product[] = [
     ],
     payment: [
       "USD 470 deposit to reserve your spot",
-      "Balance paid in person at the training",
+      "Balance due 90 days before the training starts",
       "Flexible payment plans available",
       "USD 200 referral bonus",
     ],
     earlyBirdRule: "Early bird price when full payment is made 90 days before training start.",
+    stripeDepositUrl: STRIPE, // TODO: replace with deposit-only Stripe link
+    stripeFullUrl: STRIPE,    // TODO: replace with full-payment Stripe link
+    detail: {
+      tagline: "21 days · Canggu, Bali · Yoga Alliance RYS 200",
+      description: [
+        "Transform your practice into your calling. Over 21 immersive days in the heart of Canggu, Bali, this foundational teacher training gives you everything you need to step onto the mat as a confident, qualified yoga teacher.",
+        "Led by Vivienne Zeng, each day blends asana, philosophy, anatomy, and hands-on teaching practice in a small-group environment designed for real depth — not just a certificate. You'll leave knowing how to teach safely, cue precisely, and hold a room.",
+      ],
+      highlights: [
+        { label: "Duration", value: "21 days" },
+        { label: "Location", value: "Canggu, Bali" },
+        { label: "Certification", value: "Yoga Alliance RYS 200" },
+        { label: "Group size", value: "Small group" },
+        { label: "Level", value: "All levels welcome" },
+        { label: "From", value: "$3,670" },
+      ],
+      images: [
+        { src: "/group-session-1.jpeg", alt: "Morning practice session" },
+        { src: "/group-session-2.jpeg", alt: "Community & connection" },
+        { src: "/group-session-3.jpeg", alt: "Celebration" },
+        { src: "/group-session-4.jpeg", alt: "Group practice" },
+        { src: "/solo-1.jpg", alt: "Individual practice" },
+        { src: "/solo-2.jpg", alt: "Focused alignment work" },
+      ],
+    },
   },
   {
     id: "100hr",
@@ -119,12 +156,37 @@ export const PRODUCTS: Product[] = [
     ],
     payment: [
       "USD 470 deposit to reserve your spot",
-      "Balance paid in person at the training",
+      "Early bird sign-ups (first 6): full payment due within 24 hours of signing up",
+      "Balance due 90 days before the training starts",
       "Flexible payment plans available",
-      "USD 200 referral bonus",
     ],
-    earlyBirdRule: "Early bird price for the first 6 sign-ups per session.",
+    earlyBirdRule: "Early bird price for the first 6 sign-ups per session. Full payment required within 24 hours.",
     callout: "Food & accommodation NOT included",
+    stripeDepositUrl: STRIPE, // TODO: replace with deposit-only Stripe link
+    stripeFullUrl: STRIPE,    // TODO: replace with full-payment Stripe link
+    detail: {
+      tagline: "11 days · Bali & Greece · Yoga Alliance YACEP",
+      description: [
+        "Designed for certified yoga teachers ready to go deeper. This 11-day intensive sharpens your eye for alignment, refines your cueing, and gives you advanced sequencing tools that immediately elevate your teaching.",
+        "Available in Canggu, Bali and Paros, Greece — both locations chosen for their atmosphere of focus and beauty. Small groups ensure every participant gets real attention and real progress.",
+      ],
+      highlights: [
+        { label: "Duration", value: "11 days" },
+        { label: "Location", value: "Bali & Greece" },
+        { label: "Certification", value: "Yoga Alliance YACEP" },
+        { label: "Group size", value: "Small group" },
+        { label: "Level", value: "For certified teachers" },
+        { label: "From", value: "$1,880" },
+      ],
+      images: [
+        { src: "/solo-1.jpg", alt: "Advanced asana practice" },
+        { src: "/solo-2.jpg", alt: "Alignment refinement" },
+        { src: "/group-session-1.jpeg", alt: "Morning practice" },
+        { src: "/group-session-2.jpeg", alt: "Group session" },
+        { src: "/group-session-3.jpeg", alt: "Workshop moment" },
+        { src: "/group-session-4.jpeg", alt: "Practice together" },
+      ],
+    },
   },
   {
     id: "zanzibar",
@@ -137,16 +199,25 @@ export const PRODUCTS: Product[] = [
     ],
     tiers: [
       {
-        name: "With Accommodation",
+        name: "Certification + Shared Room",
         price: "$5,500",
-        note: "Classes, certificate, accommodation & breakfast",
+        note: "Certificate · Shared accommodation · Breakfast included",
         featured: true,
+        deposit: "USD 2,750 deposit to reserve (50%)",
       },
       {
-        name: "Without Accommodation",
+        name: "Certification Only",
         price: "$3,500",
-        note: "Classes & certificate only",
+        note: "Certificate · No accommodation · No food",
         featured: false,
+        deposit: "USD 1,750 deposit to reserve (50%)",
+      },
+      {
+        name: "Asana Intensive",
+        price: "$1,500",
+        note: "15 morning intensive asana classes · No certification",
+        featured: false,
+        deposit: "USD 750 deposit to reserve (50%)",
       },
     ],
     includes: [
@@ -156,11 +227,47 @@ export const PRODUCTS: Product[] = [
       "Certificate of completion",
     ],
     payment: [
-      "USD 470 deposit to reserve your spot",
-      "Balance paid in person at the training",
-      "Flexible payment plans available",
-      "USD 200 referral bonus",
+      "50% deposit required to reserve your place",
+      "Deposit is non-refundable but may be transferred to another student",
+      "Remaining balance due 90 days before the training begins",
     ],
+    stripeDepositUrl: STRIPE, // TODO: replace with deposit-only Stripe link
+    stripeFullUrl: STRIPE,    // TODO: replace with full-payment Stripe link
+    detail: {
+      tagline: "21 days · Jambiani, Zanzibar · Indian Ocean",
+      description: [
+        "An unforgettable teacher training at the Sharazad Oasis Retreat Center on the coast of Zanzibar. This 21-day certification immerses you in yoga philosophy, asana, and teaching methodology while surrounded by the beauty of the Indian Ocean.",
+        "Three participation options make the Zanzibar TTC accessible — whether you're seeking a full certification with accommodation, training only, or an intensive asana immersion without certification.",
+      ],
+      highlights: [
+        { label: "Duration", value: "21 days" },
+        { label: "Location", value: "Jambiani, Zanzibar" },
+        { label: "Venue", value: "Sharazad Oasis Retreat" },
+        { label: "Group size", value: "Small group" },
+        { label: "Level", value: "All levels welcome" },
+        { label: "From", value: "$1,500" },
+      ],
+      images: [
+        { src: "/zanzibar/27cb4e59-82dd-40f2-a4dd-f6efba65e6d1.jpg", alt: "" },
+        { src: "/zanzibar/310418c6-886a-4182-a55c-4485f10522f2.jpg", alt: "" },
+        { src: "/zanzibar/746f733f-a2c8-43fe-9a61-1b61c1b2eca3.jpg", alt: "" },
+        { src: "/zanzibar/95463a7c-dc33-431f-a0b1-b358a0edb95b.jpg", alt: "" },
+        { src: "/zanzibar/a42ba8d7-80ee-4dda-9c93-fb17b1406f33.jpg", alt: "" },
+        { src: "/zanzibar/db49980b-613f-441e-a28a-a37eaa596a21.jpg", alt: "" },
+        { src: "/zanzibar/ea5920e4-4fa3-4449-b584-c512be10889d.jpg", alt: "" },
+        { src: "/zanzibar/BOAT TRIPS.jpg", alt: "" },
+        { src: "/zanzibar/BREAKFAST BOWL.jpg", alt: "" },
+        { src: "/zanzibar/OUR BEACH.jpg", alt: "" },
+        { src: "/zanzibar/OUR CHEF.jpg", alt: "" },
+        { src: "/zanzibar/OUR HOUSE KEEPER_.jpg", alt: "" },
+        { src: "/zanzibar/OUTDOOR SHOWERS.jpg", alt: "" },
+        { src: "/zanzibar/SO  Deluxe sea view rooms bathroom.jpeg", alt: "" },
+        { src: "/zanzibar/SO deluxe beach studio SO.jpeg", alt: "" },
+        { src: "/zanzibar/SUNRISE AT THE RESTAURANT_.jpg", alt: "" },
+        { src: "/zanzibar/TWIN ROOMS.jpg", alt: "" },
+        { src: "/zanzibar/yoga shala.jpeg", alt: "" },
+      ],
+    },
   },
 ];
 

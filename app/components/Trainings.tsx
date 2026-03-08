@@ -22,7 +22,7 @@ export default function Trainings() {
   };
 
   return (
-    <section id="trainings" style={{ backgroundColor: "#F8F4EE" }} className="py-32 lg:py-44">
+    <section id="trainings" style={{ backgroundColor: "#F8F4EE" }} className="pt-16 lg:pt-20 pb-32 lg:pb-44">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Header */}

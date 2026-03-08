@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { PRODUCTS, STRIPE, CALENDLY } from "../data/products";
 import type { Product } from "../data/products";
 
@@ -82,6 +83,26 @@ export default function Pricing() {
           </div>
         </div>
 
+        {/* View details link */}
+        <div className="flex justify-center mb-8">
+          <Link
+            href={`/training/${product.id}`}
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "0.6875rem",
+              letterSpacing: "0.18em",
+              fontWeight: 600,
+              color: "#A8784A",
+              textTransform: "uppercase",
+              textDecoration: "none",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#1A1510")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#A8784A")}
+          >
+            View full training details →
+          </Link>
+        </div>
+
         {/* Tab content */}
         <PricingContent product={product} bodyFont={bodyFont} />
       </div>
@@ -135,7 +156,7 @@ function PricingContent({
 
       {/* Tiers */}
       <div className={`grid grid-cols-1 ${gridCols} gap-0 mb-0 ${maxWidth}`} style={{ border: "1px solid #DDD0C0" }}>
-        {product.tiers.map(({ name, price, earlyBird, note, featured }, i) => (
+        {product.tiers.map(({ name, price, earlyBird, note, featured, deposit }, i) => (
           <div
             key={name}
             className="flex flex-col p-10 lg:p-12"
@@ -255,7 +276,7 @@ function PricingContent({
               )}
 
               <p style={bodyFont("0.8125rem", 400, featured ? "#C8A07A" : "#A8784A")} className="mb-8">
-                USD 470 deposit to reserve
+                {deposit ?? "USD 470 deposit to reserve"}
               </p>
               <p style={bodyFont("0.875rem", 400, featured ? "rgba(255,255,255,0.55)" : "#7A6E64")} className="leading-relaxed">
                 {note}
@@ -283,7 +304,7 @@ function PricingContent({
                 Reserve My Spot
               </a>
               <a
-                href={CALENDLY}
+                href="https://wa.me/8613816920709"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center py-2.5 transition-colors"
