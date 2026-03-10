@@ -122,19 +122,19 @@ export default function AboutIntro() {
             </a>
           </div>
 
-          {/* Right: YouTube embed */}
+          {/* Right: Hero video */}
           <div>
             <div
               className="relative overflow-hidden"
               style={{ aspectRatio: "16/9", backgroundColor: "#1A1510" }}
             >
-              <iframe
-                src="https://www.youtube.com/embed/yILoIfTMVr8"
-                title="Introduction to Tapas Yoga School"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-                style={{ border: "none" }}
+              <video
+                src="/hero-vid.mov"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
             <p style={{
