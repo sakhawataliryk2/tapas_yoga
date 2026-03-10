@@ -129,7 +129,7 @@ export default function AboutIntro() {
               style={{ aspectRatio: "16/9", backgroundColor: "#1A1510" }}
             >
               <video
-                src="/hero-vid.mov"
+                src="/hero-vid.mp4"
                 autoPlay
                 muted
                 loop
