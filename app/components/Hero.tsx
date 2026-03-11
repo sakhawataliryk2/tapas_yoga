@@ -178,7 +178,7 @@ export default function Hero() {
               CLOSE ✕
             </button>
             <div className="aspect-video w-full">
-              <video controls autoPlay className="w-full h-full" src={VIDEO_URL} />
+              <video controls autoPlay className="w-full h-full" src="/hero-vid.mp4" />
             </div>
           </div>
         </div>
