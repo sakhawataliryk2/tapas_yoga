@@ -5,6 +5,7 @@ import Image from "next/image";
 interface Slide {
   src: string;
   alt: string;
+  objectPosition?: string;
 }
 
 export default function TrainingCarousel({ slides }: { slides: Slide[] }) {
@@ -66,6 +67,7 @@ export default function TrainingCarousel({ slides }: { slides: Slide[] }) {
                 priority={i === 0}
                 className="object-cover"
                 sizes="100vw"
+                style={slide.objectPosition ? { objectPosition: slide.objectPosition } : undefined}
               />
               <div
                 className="absolute inset-0"
@@ -134,7 +136,7 @@ export default function TrainingCarousel({ slides }: { slides: Slide[] }) {
         {/* Bottom bar */}
         <div className="absolute bottom-0 left-0 right-0 z-10 px-8 pb-7 flex items-end justify-between">
           {slides[current].alt && (
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.25em", color: "rgba(255,255,255,0.55)", textTransform: "uppercase" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.12em", color: "rgba(255,255,255,0.55)", textTransform: "uppercase" }}>
               {slides[current].alt}
             </p>
           )}
@@ -172,7 +174,7 @@ export default function TrainingCarousel({ slides }: { slides: Slide[] }) {
           <button
             onClick={() => setLightbox(false)}
             className="absolute top-5 right-6 flex items-center gap-2 transition-opacity opacity-60 hover:opacity-100"
-            style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.2em", color: "white", textTransform: "uppercase" }}
+            style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.12em", color: "white", textTransform: "uppercase" }}
           >
             Close ✕
           </button>
@@ -227,7 +229,7 @@ export default function TrainingCarousel({ slides }: { slides: Slide[] }) {
           {slides[current].alt && (
             <p
               className="absolute bottom-16 left-1/2 -translate-x-1/2 text-center"
-              style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.25em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", whiteSpace: "nowrap" }}
+              style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.12em", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", whiteSpace: "nowrap" }}
             >
               {slides[current].alt}
             </p>

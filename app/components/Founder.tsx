@@ -70,7 +70,7 @@ export default function Founder() {
                 <p style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "0.625rem",
-                  letterSpacing: "0.22em",
+                  letterSpacing: "0.12em",
                   color: "rgba(255,255,255,0.55)",
                   textTransform: "uppercase",
                   marginTop: "5px",

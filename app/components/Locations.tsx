@@ -24,10 +24,11 @@ const SLIDES: Array<
   | { type: "photo"; src: string; label: string }
   | { type: "gradient"; bg: string; label: string }
 > = [
-  { type: "photo", src: "/group-session-1.jpeg", label: "Meditation practice" },
-  { type: "photo", src: "/group-session-2.jpeg", label: "Community & connection" },
-  { type: "photo", src: "/group-session-3.jpeg", label: "Celebration" },
-  { type: "photo", src: "/group-session-4.jpeg", label: "Group practice" },
+  { type: "photo", src: "/location-1.png", label: "Practice space outdoors" },
+  { type: "photo", src: "/location-2.png", label: "Rooms" },
+  { type: "photo", src: "/location-3.png", label: "Massage on site" },
+  { type: "photo", src: "/location-4.png", label: "Living area" },
+  { type: "photo", src: "/location-5.png", label: "Tapas Yoga School" },
 ];
 
 export default function Locations() {
@@ -74,7 +75,7 @@ export default function Locations() {
                   <p style={{
                     fontFamily: "var(--font-body)",
                     fontSize: "0.625rem",
-                    letterSpacing: "0.25em",
+                    letterSpacing: "0.12em",
                     color: s.type === "photo" ? "rgba(255,255,255,0.55)" : "rgba(26,21,16,0.4)",
                     textTransform: "uppercase",
                   }}>
@@ -152,7 +153,7 @@ export default function Locations() {
                   }}>
                     {n}
                   </span>
-                  <div className="border-t border-sand pt-1 flex-1">
+                  <div className="flex-1">
                     <p style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "0.9375rem", color: "#1A1510", marginBottom: "6px" }}>
                       {title}
                     </p>

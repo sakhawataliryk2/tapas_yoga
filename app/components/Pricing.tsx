@@ -174,7 +174,7 @@ function PricingContent({
                 <span style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "0.5625rem",
-                  letterSpacing: "0.22em",
+                  letterSpacing: "0.12em",
                   fontWeight: 600,
                   color: "white",
                   textTransform: "uppercase",
@@ -293,7 +293,7 @@ function PricingContent({
                   backgroundColor: featured ? "#A8784A" : "#1A1510",
                   fontFamily: "var(--font-body)",
                   fontSize: "0.6875rem",
-                  letterSpacing: "0.2em",
+                  letterSpacing: "0.12em",
                   fontWeight: 600,
                   color: "white",
                   textTransform: "uppercase",

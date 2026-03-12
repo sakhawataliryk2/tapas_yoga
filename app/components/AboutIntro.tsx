@@ -1,5 +1,8 @@
 "use client";
+import MuxVideo from "@mux/mux-video-react";
 import { CALENDLY } from "../data/products";
+
+const MUX_PLAYBACK_ID = "OCh0212rblqv02ZdcToaj00YEYDKddcQL5sOE7xqKLPXvo";
 
 const GOOGLE_REVIEWS = "https://maps.app.goo.gl/joNzUzQ3rT3X5g446?g_st=iw";
 
@@ -35,7 +38,7 @@ export default function AboutIntro() {
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Top grid: text + video */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center mb-6 lg:mb-8">
 
           {/* Left: intro text */}
           <div>
@@ -91,26 +94,6 @@ export default function AboutIntro() {
               ))}
             </div>
 
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-10 py-4 transition-colors"
-              style={{ backgroundColor: "#A8784A" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8A6038")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A8784A")}
-            >
-              <span style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "0.6875rem",
-                letterSpacing: "0.22em",
-                fontWeight: 600,
-                color: "white",
-                textTransform: "uppercase",
-              }}>
-                Apply Now
-              </span>
-            </a>
           </div>
 
           {/* Right: Hero video */}
@@ -119,8 +102,8 @@ export default function AboutIntro() {
               className="relative overflow-hidden"
               style={{ aspectRatio: "16/9", backgroundColor: "#1A1510" }}
             >
-              <video
-                src="/hero-vid.mp4"
+              <MuxVideo
+                playbackId={MUX_PLAYBACK_ID}
                 autoPlay
                 muted
                 loop

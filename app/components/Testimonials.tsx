@@ -131,7 +131,7 @@ export default function Testimonials() {
             <span style={{
               fontFamily: "var(--font-body)",
               fontSize: "0.6875rem",
-              letterSpacing: "0.22em",
+              letterSpacing: "0.12em",
               fontWeight: 600,
               textTransform: "uppercase",
             }}>

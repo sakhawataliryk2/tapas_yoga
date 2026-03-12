@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { CALENDLY } from "../data/products";
 
 const NAV_LINKS = [
+  { label: "About Us", href: "#about" },
   { label: "Trainings", href: "#trainings" },
-  { label: "About Us", href: "#founder" },
+  { label: "Curriculum", href: "#curriculum" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "FAQs", href: "#faq" },
 ];

@@ -75,7 +75,7 @@ export default function WhatYoullLearn() {
   const [active, setActive] = useState<"200hr" | "100hr">("200hr");
 
   return (
-    <section id="what-youll-learn" style={{ backgroundColor: "#EFE8DC" }} className="py-16 lg:py-28">
+    <section id="curriculum" style={{ backgroundColor: "#EFE8DC" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Header */}
@@ -231,7 +231,7 @@ export default function WhatYoullLearn() {
             <span style={{
               fontFamily: "var(--font-body)",
               fontSize: "0.6875rem",
-              letterSpacing: "0.2em",
+              letterSpacing: "0.12em",
               fontWeight: 600,
               textTransform: "uppercase",
             }}>

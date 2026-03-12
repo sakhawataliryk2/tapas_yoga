@@ -61,7 +61,7 @@ export default function Trainings() {
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: "0.625rem",
-                    letterSpacing: "0.25em",
+                    letterSpacing: "0.12em",
                     fontWeight: 500,
                     color: "#A8784A",
                     textTransform: "uppercase",
@@ -138,7 +138,7 @@ export default function Trainings() {
                   borderColor: "#1A1510",
                   fontFamily: "var(--font-body)",
                   fontSize: "0.6875rem",
-                  letterSpacing: "0.2em",
+                  letterSpacing: "0.12em",
                   fontWeight: 600,
                   color: "#1A1510",
                   textTransform: "uppercase",

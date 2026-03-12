@@ -49,7 +49,7 @@ h1, h2, h3, h4 {
   gap: 10px;
   font-family: var(--font-body);
   font-size: 0.6875rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #A8784A;
   font-weight: 500;

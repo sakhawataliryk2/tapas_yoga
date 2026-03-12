@@ -109,7 +109,7 @@ export default function PriceCard({ productId, productName, tiers, calendly }: P
           <button
             onClick={handleBook}
             className="block w-full text-center py-4 transition-colors"
-            style={{ backgroundColor: "#A8784A", fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.2em", fontWeight: 600, color: "white", textTransform: "uppercase", border: "none", cursor: "pointer" }}
+            style={{ backgroundColor: "#A8784A", fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.12em", fontWeight: 600, color: "white", textTransform: "uppercase", border: "none", cursor: "pointer" }}
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8A6038")}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A8784A")}
           >
@@ -119,7 +119,7 @@ export default function PriceCard({ productId, productName, tiers, calendly }: P
           <button
             onClick={() => setBrochureOpen(true)}
             className="block w-full text-center py-3.5 transition-colors"
-            style={{ fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.2em", fontWeight: 500, color: "#7A6E64", textTransform: "uppercase", border: "1px solid #DDD0C0", backgroundColor: "transparent", cursor: "pointer" }}
+            style={{ fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.12em", fontWeight: 500, color: "#7A6E64", textTransform: "uppercase", border: "1px solid #DDD0C0", backgroundColor: "transparent", cursor: "pointer" }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#1A1510"; e.currentTarget.style.color = "#1A1510"; }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#DDD0C0"; e.currentTarget.style.color = "#7A6E64"; }}
           >
@@ -153,7 +153,7 @@ export default function PriceCard({ productId, productName, tiers, calendly }: P
             {/* Header */}
             <div className="flex items-start justify-between p-8 pb-0">
               <div>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.2em", color: "#A8784A", textTransform: "uppercase", marginBottom: "8px" }}>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.12em", color: "#A8784A", textTransform: "uppercase", marginBottom: "8px" }}>
                   Free Download
                 </p>
                 <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 400, fontSize: "1.875rem", color: "#1A1510", letterSpacing: "-0.01em", lineHeight: 1.1 }}>
@@ -163,7 +163,7 @@ export default function PriceCard({ productId, productName, tiers, calendly }: P
               </div>
               <button
                 onClick={() => { setBrochureOpen(false); setSubmitted(false); setEmail(""); }}
-                style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.2em", color: "#7A6E64", textTransform: "uppercase", background: "none", border: "none", cursor: "pointer", marginTop: "4px" }}
+                style={{ fontFamily: "var(--font-body)", fontSize: "0.625rem", letterSpacing: "0.12em", color: "#7A6E64", textTransform: "uppercase", background: "none", border: "none", cursor: "pointer", marginTop: "4px" }}
               >
                 ✕ Close
               </button>
@@ -205,7 +205,7 @@ export default function PriceCard({ productId, productName, tiers, calendly }: P
                     <button
                       type="submit"
                       className="w-full py-4 transition-colors"
-                      style={{ backgroundColor: "#1A1510", fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.2em", fontWeight: 600, color: "white", textTransform: "uppercase", border: "none", cursor: "pointer" }}
+                      style={{ backgroundColor: "#1A1510", fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.12em", fontWeight: 600, color: "white", textTransform: "uppercase", border: "none", cursor: "pointer" }}
                       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#A8784A")}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1A1510")}
                     >

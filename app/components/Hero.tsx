@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
+import MuxVideo from "@mux/mux-video-react";
 import { CALENDLY } from "../data/products";
-const VIDEO_URL =
-  "https://video.gumlet.io/67f02e049eef3d88099c9644/698c36e4aec3d4e4200257e7/download.mp4";
+
+const MUX_PLAYBACK_ID = "OCh0212rblqv02ZdcToaj00YEYDKddcQL5sOE7xqKLPXvo";
 
 const PROOF = [
   "5.0 · 28 Google Reviews",
@@ -29,7 +30,7 @@ export default function Hero() {
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            src={VIDEO_URL}
+            src="https://video.gumlet.io/67f02e049eef3d88099c9644/698c36e4aec3d4e4200257e7/download.mp4"
           />
           {/* Multi-layer overlay for depth */}
           <div
@@ -170,12 +171,12 @@ export default function Hero() {
             <button
               onClick={() => setShowModal(false)}
               className="absolute -top-10 right-0 text-white/50 hover:text-white/90 transition-colors"
-              style={{ fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.2em" }}
+              style={{ fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.12em" }}
             >
               CLOSE ✕
             </button>
             <div className="aspect-video w-full">
-              <video controls autoPlay className="w-full h-full" src="/hero-vid.mp4" />
+              <MuxVideo playbackId={MUX_PLAYBACK_ID} controls autoPlay className="w-full h-full" />
             </div>
           </div>
         </div>

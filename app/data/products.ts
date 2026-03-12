@@ -25,7 +25,7 @@ export interface ProductDetail {
   tagline: string;
   description: string[];
   highlights: { label: string; value: string }[];
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; objectPosition?: string }[];
 }
 
 export interface Product {
@@ -113,12 +113,9 @@ export const PRODUCTS: Product[] = [
         { label: "From", value: "$3,670" },
       ],
       images: [
-        { src: "/group-session-1.jpeg", alt: "Morning practice session" },
-        { src: "/group-session-2.jpeg", alt: "Community & connection" },
-        { src: "/group-session-3.jpeg", alt: "Celebration" },
-        { src: "/group-session-4.jpeg", alt: "Group practice" },
-        { src: "/solo-1.jpg", alt: "Individual practice" },
-        { src: "/solo-2.jpg", alt: "Focused alignment work" },
+        { src: "/200hr-1.png", alt: "200HR training session" },
+        { src: "/200hr-2.jpeg", alt: "200HR training session", objectPosition: "center 70%" },
+        { src: "/200hr-3.png", alt: "200HR training community" },
       ],
     },
   },
@@ -179,12 +176,10 @@ export const PRODUCTS: Product[] = [
         { label: "From", value: "$1,880" },
       ],
       images: [
-        { src: "/solo-1.jpg", alt: "Advanced asana practice" },
-        { src: "/solo-2.jpg", alt: "Alignment refinement" },
-        { src: "/group-session-1.jpeg", alt: "Morning practice" },
-        { src: "/group-session-2.jpeg", alt: "Group session" },
-        { src: "/group-session-3.jpeg", alt: "Workshop moment" },
-        { src: "/group-session-4.jpeg", alt: "Practice together" },
+        { src: "/100hr-1.png", alt: "Advanced sequencing workshop" },
+        { src: "/100hr-2.png", alt: "Hands-on alignment refinement" },
+        { src: "/100hr-3.png", alt: "Teaching methodology in practice" },
+        { src: "/100hr-4.png", alt: "Small group intensive session" },
       ],
     },
   },

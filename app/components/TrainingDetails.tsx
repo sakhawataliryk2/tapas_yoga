@@ -168,7 +168,7 @@ export default function TrainingDetails() {
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "0.625rem",
-                  letterSpacing: "0.25em",
+                  letterSpacing: "0.12em",
                   color: "#A8784A",
                   fontWeight: 500,
                 }}
@@ -192,7 +192,7 @@ export default function TrainingDetails() {
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "0.625rem",
-                  letterSpacing: "0.25em",
+                  letterSpacing: "0.12em",
                   color: "#A8784A",
                   fontWeight: 500,
                 }}
@@ -228,7 +228,7 @@ export default function TrainingDetails() {
             style={{
               fontFamily: "var(--font-body)",
               fontSize: "0.6875rem",
-              letterSpacing: "0.22em",
+              letterSpacing: "0.12em",
               fontWeight: 600,
               color: "white",
               textTransform: "uppercase",

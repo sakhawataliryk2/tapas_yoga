@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const FEATURES = [
   { title: "Official RYS Registration", body: "Formally registered with Yoga Alliance — verifiable, legitimate, and respected worldwide." },
@@ -67,51 +68,13 @@ export default function YogaAlliance() {
             </div>
           </div>
 
-          {/* ── Yoga Alliance Badge (placeholder) ── */}
-          <div className="order-1 lg:order-2 flex items-center justify-center" style={{ height: "clamp(440px, 55vw, 580px)" }}>
-            <div
-              className="flex flex-col items-center justify-center gap-6"
-              style={{
-                width: "320px",
-                height: "320px",
-                border: "2px solid #DDD0C0",
-                backgroundColor: "#EFE8DC",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-heading)",
-                  fontWeight: 400,
-                  fontSize: "1.5rem",
-                  color: "#A8784A",
-                  textAlign: "center",
-                  lineHeight: 1.3,
-                }}
-              >
-                Yoga Alliance<br />
-                <em style={{ fontStyle: "italic" }}>Certified</em>
-              </p>
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.625rem",
-                  letterSpacing: "0.2em",
-                  color: "#7A6E64",
-                  textTransform: "uppercase",
-                }}
-              >
-                RYS 200 · YACEP
-              </p>
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.75rem",
-                  color: "#A8784A",
-                  marginTop: "8px",
-                }}
-              >
-                Badge placeholder
-              </p>
+          {/* ── Certification images ── */}
+          <div className="order-1 lg:order-2 flex items-center justify-center gap-6">
+            <div className="relative" style={{ width: "200px", height: "200px" }}>
+              <Image src="/certification-1.png" alt="Yoga Alliance RYS 200 Certification" fill className="object-contain" sizes="200px" />
+            </div>
+            <div className="relative" style={{ width: "200px", height: "200px" }}>
+              <Image src="/certification-2.png" alt="Yoga Alliance YACEP Certification" fill className="object-contain" sizes="200px" />
             </div>
           </div>
         </div>

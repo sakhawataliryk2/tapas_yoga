@@ -1,6 +1,20 @@
+"use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
+const SLIDES = [
+  { src: "/impressions-training.png", label: "Training session" },
+  { src: "/impressions-training-2.jpeg", label: "Community & practice" },
+];
+
 export default function TrainingImpressions() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setCurrent((p) => (p + 1) % SLIDES.length), 4000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section id="impressions" style={{ backgroundColor: "#EFE8DC" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
@@ -30,25 +44,47 @@ export default function TrainingImpressions() {
           </p>
         </div>
 
-        {/* Feature photo */}
+        {/* Photo carousel */}
         <div
           className="relative w-full overflow-hidden"
-          style={{
-            aspectRatio: "16/9",
-            backgroundColor: "#1A1510",
-          }}
+          style={{ aspectRatio: "16/9", backgroundColor: "#1A1510" }}
         >
-          <Image
-            src="/group-session-5.JPG"
-            alt="Ceremony circle during training"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 80vw"
-          />
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(to top, rgba(20,15,10,0.25) 0%, transparent 30%)" }}
-          />
+          {SLIDES.map((slide, i) => (
+            <div
+              key={i}
+              className="absolute inset-0 transition-opacity duration-1000"
+              style={{ opacity: i === current ? 1 : 0 }}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.label}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 80vw"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, rgba(20,15,10,0.25) 0%, transparent 30%)" }}
+              />
+            </div>
+          ))}
+
+          {/* Dot nav */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+            {SLIDES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                style={{
+                  height: "5px",
+                  width: i === current ? "20px" : "5px",
+                  borderRadius: "3px",
+                  backgroundColor: i === current ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.3)",
+                  transition: "all 0.3s",
+                }}
+              />
+            ))}
+          </div>
         </div>
 
       </div>
