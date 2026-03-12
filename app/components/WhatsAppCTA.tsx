@@ -3,7 +3,7 @@ import { WHATSAPP } from "../data/products";
 
 export default function WhatsAppCTA() {
   return (
-    <section id="whatsapp" style={{ backgroundColor: "#F8F4EE" }} className="py-28 lg:py-36">
+    <section id="whatsapp" style={{ backgroundColor: "#F8F4EE" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-10">
           {/* Left */}

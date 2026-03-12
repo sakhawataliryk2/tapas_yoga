@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { PRODUCTS } from "../data/products";
 
 const CARD_DATA = PRODUCTS.map((p) => {
@@ -15,12 +16,6 @@ const CARD_DATA = PRODUCTS.map((p) => {
 });
 
 export default function Trainings() {
-  const handleClick = (slug: string) => {
-    window.location.hash = slug;
-    const el = document.getElementById("pricing");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="trainings" style={{ backgroundColor: "#F8F4EE" }} className="pt-16 lg:pt-20 pb-16 lg:pb-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
@@ -136,9 +131,9 @@ export default function Trainings() {
               </div>
 
               {/* CTA */}
-              <button
-                onClick={() => handleClick(card.slug)}
-                className="mt-10 w-full text-center py-3.5 transition-colors border"
+              <Link
+                href={`/training/${card.id}`}
+                className="mt-10 w-full text-center py-3.5 transition-colors border block"
                 style={{
                   borderColor: "#1A1510",
                   fontFamily: "var(--font-body)",
@@ -159,7 +154,7 @@ export default function Trainings() {
                 }}
               >
                 View Details
-              </button>
+              </Link>
             </div>
           ))}
         </div>

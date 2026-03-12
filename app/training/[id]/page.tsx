@@ -139,65 +139,33 @@ export default async function TrainingDetailPage({
               </div>
             </div>
 
-            {/* ── 100HR Videos — side by side on desktop ── */}
+            {/* ── 100HR Video — About the Training ── */}
             {product.id === "100hr" && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 lg:mb-20">
-                {/* About the Training */}
-                <div>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "0.625rem",
-                      letterSpacing: "0.15em",
-                      color: "#A8784A",
-                      textTransform: "uppercase",
-                      fontWeight: 500,
-                      marginBottom: "12px",
-                    }}
-                  >
-                    About the Training
-                  </p>
-                  <div
-                    className="relative overflow-hidden"
-                    style={{ aspectRatio: "9/16", backgroundColor: "#1A1510" }}
-                  >
-                    <video
-                      src="https://video.gumlet.io/67f02e049eef3d88099c9644/698c36e4aec3d4e4200257e7/download.mp4"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                {/* Student Testimonial */}
-                <div>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "0.625rem",
-                      letterSpacing: "0.15em",
-                      color: "#A8784A",
-                      textTransform: "uppercase",
-                      fontWeight: 500,
-                      marginBottom: "12px",
-                    }}
-                  >
-                    Student Testimonial — Tanya
-                  </p>
-                  <div
-                    className="relative overflow-hidden"
-                    style={{ aspectRatio: "9/16", backgroundColor: "#1A1510" }}
-                  >
-                    <video
-                      src="https://video.gumlet.io/67f02e049eef3d88099c9644/698c49be5cf0bdb0b9286778/download.mp4"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              <div className="max-w-md mb-16 lg:mb-20">
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.625rem",
+                    letterSpacing: "0.15em",
+                    color: "#A8784A",
+                    textTransform: "uppercase",
+                    fontWeight: 500,
+                    marginBottom: "12px",
+                  }}
+                >
+                  About the Training
+                </p>
+                <div
+                  className="relative overflow-hidden"
+                  style={{ aspectRatio: "9/16", backgroundColor: "#1A1510" }}
+                >
+                  <video
+                    src="https://video.gumlet.io/67f02e049eef3d88099c9644/698c36e4aec3d4e4200257e7/download.mp4"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             )}

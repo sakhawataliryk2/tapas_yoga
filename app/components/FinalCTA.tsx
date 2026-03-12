@@ -6,23 +6,8 @@ export default function FinalCTA() {
     <section
       id="final-cta"
       className="relative overflow-hidden"
-      style={{ backgroundColor: "#1A1510", padding: "clamp(100px, 14vw, 180px) 24px" }}
+      style={{ backgroundColor: "#EFE8DC", padding: "clamp(100px, 14vw, 180px) 24px" }}
     >
-      {/* Warm radial glow */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          width: "900px",
-          height: "900px",
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(168,120,74,0.14) 0%, transparent 65%)",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          filter: "blur(80px)",
-        }}
-      />
-
       <div className="relative z-10 max-w-2xl mx-auto text-center">
 
         {/* Label — flanking lines suit dark bg better than the .label class */}
@@ -37,13 +22,13 @@ export default function FinalCTA() {
             letterSpacing: "0.3em",
             textTransform: "uppercase",
             fontWeight: 500,
-            color: "#C8A07A",
+            color: "#A8784A",
             marginBottom: "40px",
           }}
         >
-          <span style={{ display: "block", width: "24px", height: "1px", backgroundColor: "#C8A07A" }} />
+          <span style={{ display: "block", width: "24px", height: "1px", backgroundColor: "#A8784A" }} />
           Get Started
-          <span style={{ display: "block", width: "24px", height: "1px", backgroundColor: "#C8A07A" }} />
+          <span style={{ display: "block", width: "24px", height: "1px", backgroundColor: "#A8784A" }} />
         </p>
 
         {/* Heading */}
@@ -51,15 +36,15 @@ export default function FinalCTA() {
           style={{
             fontFamily: "var(--font-heading)",
             fontWeight: 400,
-            fontSize: "clamp(3rem, 7vw, 6rem)",
-            color: "white",
+            fontSize: "clamp(2.5rem, 4.5vw, 4rem)",
+            color: "#1A1510",
             letterSpacing: "-0.02em",
             lineHeight: 1.0,
             marginBottom: "32px",
           }}
         >
           Schedule an<br />
-          <em style={{ fontStyle: "italic", color: "#C8A07A" }}>Info Call</em>
+          <em style={{ fontStyle: "italic", color: "#A8784A" }}>Info Call</em>
         </h2>
 
         {/* Body */}
@@ -67,7 +52,7 @@ export default function FinalCTA() {
           style={{
             fontFamily: "var(--font-body)",
             fontSize: "1.0625rem",
-            color: "rgba(255,255,255,0.45)",
+            color: "#7A6E64",
             lineHeight: 1.8,
             maxWidth: "440px",
             margin: "0 auto",
