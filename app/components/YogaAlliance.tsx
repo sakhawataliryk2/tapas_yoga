@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const FEATURES = [
@@ -7,7 +8,19 @@ const FEATURES = [
   { title: "Recognized Worldwide", body: "Your qualification holds weight wherever you choose to teach or continue your training." },
 ];
 
+const SLIDES = [
+  { src: "/certification-1.png", alt: "Yoga Alliance RYS 200 Certification" },
+  { src: "/certification-2.png", alt: "Yoga Alliance YACEP Certification" },
+];
+
 export default function YogaAlliance() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setCurrent((p) => (p + 1) % SLIDES.length), 3500);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section id="yoga-alliance" style={{ backgroundColor: "#F8F4EE" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
@@ -68,13 +81,41 @@ export default function YogaAlliance() {
             </div>
           </div>
 
-          {/* ── Certification images ── */}
-          <div className="order-1 lg:order-2 flex items-center justify-center gap-6">
-            <div className="relative" style={{ width: "200px", height: "200px" }}>
-              <Image src="/certification-1.png" alt="Yoga Alliance RYS 200 Certification" fill className="object-contain" sizes="200px" />
-            </div>
-            <div className="relative" style={{ width: "200px", height: "200px" }}>
-              <Image src="/certification-2.png" alt="Yoga Alliance YACEP Certification" fill className="object-contain" sizes="200px" />
+          {/* ── Certification carousel ── */}
+          <div className="order-1 lg:order-2">
+            <div className="relative overflow-hidden" style={{ aspectRatio: "1/1" }}>
+              {SLIDES.map((slide, i) => (
+                <div
+                  key={i}
+                  className="absolute inset-0 flex items-center justify-center transition-opacity duration-700"
+                  style={{ opacity: i === current ? 1 : 0 }}
+                >
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              ))}
+
+              {/* Dot nav */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                {SLIDES.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    style={{
+                      height: "5px",
+                      width: i === current ? "20px" : "5px",
+                      borderRadius: "3px",
+                      backgroundColor: i === current ? "#A8784A" : "#DDD0C0",
+                      transition: "all 0.3s",
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
