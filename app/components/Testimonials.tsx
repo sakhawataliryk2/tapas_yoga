@@ -116,7 +116,7 @@ export default function Testimonials() {
   const t = TEXT_TESTIMONIALS[current];
 
   return (
-    <section id="testimonials" style={{ backgroundColor: "#EFE8DC" }} className="py-20 lg:py-44">
+    <section id="testimonials" style={{ backgroundColor: "#EFE8DC" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Header */}
@@ -249,9 +249,9 @@ export default function Testimonials() {
         </div>
 
         {/* Video pair — portrait */}
-        <div className="flex flex-col sm:flex-row justify-center gap-6 mb-24">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 mb-24 max-w-2xl mx-auto">
           {VIDEOS.map(({ name, program, url }) => (
-            <div key={name} style={{ backgroundColor: "#F8F4EE", width: "100%", maxWidth: "360px", margin: "0 auto", borderRadius: "12px", overflow: "hidden" }}>
+            <div key={name} style={{ backgroundColor: "#F8F4EE", width: "100%", borderRadius: "12px", overflow: "hidden" }}>
               <div className="relative" style={{ aspectRatio: "9/16", backgroundColor: "#1A1510" }}>
                 <video
                   src={url}

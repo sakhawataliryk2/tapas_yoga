@@ -1,21 +1,23 @@
 "use client";
 import { CALENDLY } from "../data/products";
 
-const HIGHLIGHTS = [
+const GOOGLE_REVIEWS = "https://maps.app.goo.gl/joNzUzQ3rT3X5g446?g_st=iw";
+
+const FEATURED_REVIEWS = [
   {
-    name: "Marion Huber",
-    program: "200HR Graduate",
-    quote: "The level of depth Vivienne goes to to make sure you become great teachers is unparalleled. I gained so much confidence from these exercises alone.",
+    name: "Mina Khazeni",
+    url: "https://maps.app.goo.gl/SLE3woFnvXDm2uCQ8",
+    quote: "I had such a great experience at the 100-hour Advanced Teacher Training. The training was led by Vivienne, and I really loved her way of teaching. Vivienne made the practice really challenging in the best way, but also so playful. I felt like I grew a lot as a teacher and left with so many new tools and ideas for my own classes.",
   },
   {
-    name: "Noemie Rousseau",
-    program: "200HR Graduate",
-    quote: "Training with Vivienne has been a truly transformative experience — a deep immersion into the philosophy of yoga, guided with immense wisdom and kindness.",
+    name: "Tanja Meier",
+    url: "https://maps.app.goo.gl/dE654HEVBu5p6e1H7",
+    quote: "Vivienne\u2019s Teacher Training at the Tapas Yoga is definitively one of the most memorable experiences of my life. I\u2019ve learned so much & had so much fun at the same time! Vivienne has a teaching style that is very precise and motivating \u2014 it will push you to the next level without doubt!",
   },
   {
-    name: "Denis Pasquali",
-    program: "200HR Graduate",
-    quote: "It's been even better than what I could imagine. Vivienne has changed my life because she is an example of discipline and the best teacher I could ever ask for.",
+    name: "Maura Hegi",
+    url: "https://maps.app.goo.gl/vdEU3Cs3Tsy56pMk8",
+    quote: "Nowhere will you learn deeper and quicker than in Vivienne\u2019s classes and trainings. She hands down will give you the best technical and alignment input you can hope for, bringing your practice to a whole new dimension. Plus Vivienne is fun and caring, and full of wisdom.",
   },
 ];
 
@@ -59,20 +61,9 @@ export default function AboutIntro() {
                 color: "#7A6E64",
                 lineHeight: 1.8,
               }}
-              className="mb-6"
-            >
-              The Tapas Yoga School is registered with Yoga Alliance, offering internationally accredited teacher training courses led by highly qualified instructors. Our trainings meet the standards for the 200HR Yoga Alliance Certification and the 100HR Yoga Alliance Continuing Education Program (YACEP).
-            </p>
-            <p
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "1.0625rem",
-                color: "#7A6E64",
-                lineHeight: 1.8,
-              }}
               className="mb-10"
             >
-              The school is proudly recognized as one of the best yoga teacher training courses in Bali and worldwide.
+              The Tapas Yoga School is registered with Yoga Alliance, offering internationally accredited teacher training courses led by highly qualified instructors. Our trainings meet the standards for the 200HR Yoga Alliance Certification and the 100HR Yoga Alliance Continuing Education Program (YACEP), and the school is proudly recognized as one of the best yoga teacher training courses in Bali and worldwide.
             </p>
 
             {/* Stats row */}
@@ -148,65 +139,73 @@ export default function AboutIntro() {
           </div>
         </div>
 
-        {/* Testimonials strip */}
+        {/* Google Reviews */}
         <div>
-          <div className="flex items-center gap-4 mb-10">
+          <a
+            href={GOOGLE_REVIEWS}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 mb-8 transition-opacity hover:opacity-80"
+            style={{ textDecoration: "none" }}
+          >
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} />)}
             </div>
             <span style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", color: "#7A6E64" }}>
-              5.0 · 28 Google Reviews
+              5.0 · 28 Google Reviews →
             </span>
-          </div>
+          </a>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x" style={{ border: "1px solid #DDD0C0", borderColor: "#DDD0C0" }}>
-            {HIGHLIGHTS.map(({ name, program, quote }, i) => (
-              <div
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x" style={{ border: "1px solid #DDD0C0" }}>
+            {FEATURED_REVIEWS.map(({ name, url, quote }) => (
+              <a
                 key={name}
-                className="p-6 lg:p-10"
-                style={{
-                  backgroundColor: "#F8F4EE",
-                }}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-6 lg:p-8 transition-colors"
+                style={{ backgroundColor: "#F8F4EE", textDecoration: "none" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#EFE8DC")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#F8F4EE")}
               >
                 <span style={{
                   fontFamily: "var(--font-heading)",
                   fontStyle: "italic",
-                  fontSize: "3rem",
+                  fontSize: "2.5rem",
                   lineHeight: 0.8,
                   color: "#DDD0C0",
                   display: "block",
-                  marginBottom: "12px",
+                  marginBottom: "10px",
                 }}>
                   &ldquo;
                 </span>
                 <p style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: "0.9375rem",
+                  fontSize: "0.875rem",
                   color: "#1A1510",
-                  lineHeight: 1.75,
-                  minHeight: "5em",
-                }} className="mb-6">
+                  lineHeight: 1.7,
+                }} className="mb-5">
                   {quote}
                 </p>
-                <div className="flex items-center gap-3 border-t pt-5" style={{ borderColor: "#DDD0C0" }}>
+                <div className="flex items-center gap-3 border-t pt-4" style={{ borderColor: "#DDD0C0" }}>
                   <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{ backgroundColor: "#EFE8DC" }}
                   >
-                    <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontSize: "1rem", color: "#A8784A" }}>
+                    <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontSize: "0.875rem", color: "#A8784A" }}>
                       {name[0]}
                     </span>
                   </div>
                   <div>
-                    <p style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "0.9375rem", color: "#1A1510" }}>
+                    <p style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "0.875rem", color: "#1A1510" }}>
                       {name}
                     </p>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#A8784A", marginTop: "2px" }}>
-                      {program}
-                    </p>
+                    <div className="flex gap-0.5 mt-1">
+                      {[...Array(5)].map((_, i) => <Star key={i} />)}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

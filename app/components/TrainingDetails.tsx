@@ -45,8 +45,73 @@ export default function TrainingDetails() {
     : "";
 
   return (
-    <section id="training-details" style={{ backgroundColor: "#EFE8DC" }} className="py-20 lg:py-44">
+    <section id="training-details" style={{ backgroundColor: "#EFE8DC" }} className="py-16 lg:py-28">
       <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+
+        {/* All 2026 Dates grid — moved above countdown */}
+        <div id="all-dates" className="mb-20">
+          <h3
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontWeight: 400,
+              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
+              color: "#1A1510",
+              letterSpacing: "-0.01em",
+            }}
+            className="mb-10"
+          >
+            All 2026{" "}
+            <em style={{ fontStyle: "italic" }}>Training Dates</em>
+          </h3>
+
+          <div className="space-y-2 max-w-2xl mx-auto text-left">
+            {allSessions.map(({ product, session }, i) => (
+              <Link
+                key={i}
+                href={`/training/${product.id}`}
+                className="flex flex-col sm:grid gap-3 sm:gap-4 py-4 px-5 sm:px-6 group transition-colors"
+                style={{
+                  gridTemplateColumns: "1fr 1fr auto",
+                  backgroundColor: "#F8F4EE",
+                  borderBottom: i < allSessions.length - 1 ? "1px solid #EFE8DC" : "none",
+                  textDecoration: "none",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#DDD0C0")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#F8F4EE")}
+              >
+                <div>
+                  <span style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", fontWeight: 500, color: "#1A1510", display: "block" }}>
+                    {product.shortName}
+                  </span>
+                  <span style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#7A6E64" }}>
+                    {session.location}
+                  </span>
+                </div>
+                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#7A6E64" }}>
+                  {session.label}
+                </span>
+                <span style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.625rem",
+                  letterSpacing: "0.18em",
+                  fontWeight: 600,
+                  color: "#A8784A",
+                  textTransform: "uppercase",
+                  whiteSpace: "nowrap",
+                }}>
+                  View details →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Thin rule */}
+        <div className="flex items-center gap-6 mb-14 max-w-xs mx-auto">
+          <div className="flex-1 h-px bg-sand" />
+          <div className="w-1 h-1 rounded-full bg-clay" />
+          <div className="flex-1 h-px bg-sand" />
+        </div>
 
         <div className="label justify-center mb-10">Next Training</div>
 
@@ -115,13 +180,6 @@ export default function TrainingDetails() {
           ))}
         </div>
 
-        {/* Thin rule */}
-        <div className="flex items-center gap-6 mb-14 max-w-xs mx-auto">
-          <div className="flex-1 h-px bg-sand" />
-          <div className="w-1 h-1 rounded-full bg-clay" />
-          <div className="flex-1 h-px bg-sand" />
-        </div>
-
         {/* Details row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14 text-left max-w-2xl mx-auto">
           {[
@@ -179,70 +237,6 @@ export default function TrainingDetails() {
             Apply Now
           </span>
         </a>
-
-        {/* All 2026 Dates grid */}
-        <div id="all-dates" className="mt-20">
-          <div className="flex items-center gap-6 mb-10 max-w-xs mx-auto">
-            <div className="flex-1 h-px bg-sand" />
-            <div className="w-1 h-1 rounded-full bg-clay" />
-            <div className="flex-1 h-px bg-sand" />
-          </div>
-
-          <h3
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontWeight: 400,
-              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
-              color: "#1A1510",
-              letterSpacing: "-0.01em",
-            }}
-            className="mb-10"
-          >
-            All 2026{" "}
-            <em style={{ fontStyle: "italic" }}>Training Dates</em>
-          </h3>
-
-          <div className="space-y-2 max-w-2xl mx-auto text-left">
-            {allSessions.map(({ product, session }, i) => (
-              <Link
-                key={i}
-                href={`/training/${product.id}`}
-                className="flex flex-col sm:grid gap-3 sm:gap-4 py-4 px-5 sm:px-6 group transition-colors"
-                style={{
-                  gridTemplateColumns: "1fr 1fr auto",
-                  backgroundColor: "#F8F4EE",
-                  borderBottom: i < allSessions.length - 1 ? "1px solid #EFE8DC" : "none",
-                  textDecoration: "none",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#DDD0C0")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#F8F4EE")}
-              >
-                <div>
-                  <span style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", fontWeight: 500, color: "#1A1510", display: "block" }}>
-                    {product.shortName}
-                  </span>
-                  <span style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#7A6E64" }}>
-                    {session.location}
-                  </span>
-                </div>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#7A6E64" }}>
-                  {session.label}
-                </span>
-                <span style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.625rem",
-                  letterSpacing: "0.18em",
-                  fontWeight: 600,
-                  color: "#A8784A",
-                  textTransform: "uppercase",
-                  whiteSpace: "nowrap",
-                }}>
-                  View details →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -2,8 +2,6 @@
 import Image from "next/image";
 
 import { CALENDLY, INSTAGRAM } from "../data/products";
-const VIVIENNE_VIDEO =
-  "https://video.gumlet.io/67f02e049eef3d88099c9644/698c36e4aec3d4e4200257e7/download.mp4";
 
 const CREDS = [
   { label: "Yoga Alliance Certified", detail: "RYT 200, E-RYT 500, YACEP" },
@@ -32,7 +30,7 @@ function InstagramIcon() {
 
 export default function Founder() {
   return (
-    <section id="founder" style={{ backgroundColor: "#F8F4EE" }} className="py-20 lg:py-44">
+    <section id="founder" style={{ backgroundColor: "#F8F4EE" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* ── Two-column: photo + bio ── */}
@@ -45,7 +43,7 @@ export default function Founder() {
               style={{ aspectRatio: "4/5" }}
             >
               <Image
-                src="/solo-1.jpg"
+                src="/meet-the-teacher.jpg"
                 alt="Vivienne Zeng — Founder & Lead Instructor"
                 fill
                 className="object-cover object-center"
@@ -184,33 +182,6 @@ export default function Founder() {
           </div>
         </div>
 
-        {/* ── Intro video — vertical, centred ── */}
-        <div className="flex flex-col items-center">
-          <p style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "0.625rem",
-            letterSpacing: "0.25em",
-            color: "#A8784A",
-            textTransform: "uppercase",
-            fontWeight: 500,
-            marginBottom: "16px",
-            alignSelf: "flex-start",
-          }}>
-            Introduction
-          </p>
-          <div
-            className="relative w-full overflow-hidden"
-            style={{ aspectRatio: "9/16", maxWidth: "400px", backgroundColor: "#1A1510" }}
-          >
-            <video
-              src={VIVIENNE_VIDEO}
-              controls
-              playsInline
-              preload="metadata"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
 
       </div>
     </section>

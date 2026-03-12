@@ -1,6 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
-import Image from "next/image";
 
 const FEATURES = [
   { title: "Official RYS Registration", body: "Formally registered with Yoga Alliance — verifiable, legitimate, and respected worldwide." },
@@ -8,22 +6,9 @@ const FEATURES = [
   { title: "Recognized Worldwide", body: "Your qualification holds weight wherever you choose to teach or continue your training." },
 ];
 
-const SLIDES = [
-  { src: "/group-session-4.jpeg", label: "Training in session" },
-  { src: "/group-session-2.jpeg", label: "Community & connection" },
-  { src: "/solo-2.jpg", label: "Vivienne Zeng · Lead instructor" },
-];
-
 export default function YogaAlliance() {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => setCurrent((p) => (p + 1) % SLIDES.length), 5000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
-    <section id="yoga-alliance" style={{ backgroundColor: "#F8F4EE" }} className="py-20 lg:py-44">
+    <section id="yoga-alliance" style={{ backgroundColor: "#F8F4EE" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-center">
 
@@ -82,57 +67,51 @@ export default function YogaAlliance() {
             </div>
           </div>
 
-          {/* ── Carousel ── */}
-          <div className="order-1 lg:order-2 relative overflow-hidden" style={{ height: "clamp(440px, 55vw, 580px)" }}>
-            {SLIDES.map((s, i) => (
-              <div
-                key={i}
-                className="absolute inset-0 transition-opacity duration-1000"
-                style={{ opacity: i === current ? 1 : 0 }}
+          {/* ── Yoga Alliance Badge (placeholder) ── */}
+          <div className="order-1 lg:order-2 flex items-center justify-center" style={{ height: "clamp(440px, 55vw, 580px)" }}>
+            <div
+              className="flex flex-col items-center justify-center gap-6"
+              style={{
+                width: "320px",
+                height: "320px",
+                border: "2px solid #DDD0C0",
+                backgroundColor: "#EFE8DC",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontWeight: 400,
+                  fontSize: "1.5rem",
+                  color: "#A8784A",
+                  textAlign: "center",
+                  lineHeight: 1.3,
+                }}
               >
-                <Image
-                  src={s.src}
-                  alt={s.label}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority={i === 0}
-                />
-                {/* Subtle bottom gradient for label legibility */}
-                <div
-                  className="absolute inset-0"
-                  style={{ background: "linear-gradient(to top, rgba(20,15,10,0.45) 0%, transparent 40%)" }}
-                />
-                {/* Label */}
-                <div className="absolute bottom-8 left-8">
-                  <p style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "0.625rem",
-                    letterSpacing: "0.25em",
-                    color: "rgba(255,255,255,0.55)",
-                    textTransform: "uppercase",
-                  }}>
-                    {s.label}
-                  </p>
-                </div>
-              </div>
-            ))}
-
-            {/* Dots */}
-            <div className="absolute bottom-8 right-8 flex gap-2 z-10">
-              {SLIDES.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  style={{
-                    width: i === current ? "20px" : "6px",
-                    height: "6px",
-                    borderRadius: "3px",
-                    backgroundColor: i === current ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.3)",
-                    transition: "all 0.3s",
-                  }}
-                />
-              ))}
+                Yoga Alliance<br />
+                <em style={{ fontStyle: "italic" }}>Certified</em>
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.625rem",
+                  letterSpacing: "0.2em",
+                  color: "#7A6E64",
+                  textTransform: "uppercase",
+                }}
+              >
+                RYS 200 · YACEP
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.75rem",
+                  color: "#A8784A",
+                  marginTop: "8px",
+                }}
+              >
+                Badge placeholder
+              </p>
             </div>
           </div>
         </div>

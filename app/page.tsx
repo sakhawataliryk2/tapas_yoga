@@ -2,13 +2,12 @@ import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import AboutIntro from "./components/AboutIntro";
 import Trainings from "./components/Trainings";
-import TrainingDetails from "./components/TrainingDetails";
 import YogaAlliance from "./components/YogaAlliance";
 import WhatYoullLearn from "./components/WhatYoullLearn";
 import Founder from "./components/Founder";
+import TrainingDetails from "./components/TrainingDetails";
 import TrainingImpressions from "./components/TrainingImpressions";
 import Locations from "./components/Locations";
-import Pricing from "./components/Pricing";
 import WhatsAppCTA from "./components/WhatsAppCTA";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
@@ -22,16 +21,15 @@ export default function Home() {
       <main>
         <Hero />
         <AboutIntro />
+        <YogaAlliance />
+        <Founder />
         <Trainings />
         <TrainingDetails />
-        <YogaAlliance />
         <WhatYoullLearn />
-        <Founder />
+        <Testimonials />
         <TrainingImpressions />
         <Locations />
-        <Pricing />
         <WhatsAppCTA />
-        <Testimonials />
         <FAQ />
         <FinalCTA />
       </main>

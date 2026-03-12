@@ -7,76 +7,43 @@ const PDF_URL = "#";
 const PILLARS_200 = [
   {
     n: "01",
-    title: "Teach with confidence",
-    body: "Voice, presence, and class leadership — the fundamentals of holding a room.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="15" stroke="currentColor" strokeWidth="0.75" />
-        <circle cx="16" cy="16" r="7" stroke="currentColor" strokeWidth="0.75" />
-        <line x1="16" y1="1" x2="16" y2="31" stroke="currentColor" strokeWidth="0.75" />
-        <line x1="1" y1="16" x2="31" y2="16" stroke="currentColor" strokeWidth="0.75" />
-      </svg>
-    ),
+    title: "100+ Asana Poses",
+    body: "With modifications for all levels",
   },
   {
     n: "02",
-    title: "Sequence intelligently",
-    body: "Build classes with clear arcs, logical progressions, and transitions that flow.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <path d="M4 8h24M4 16h20M4 24h16" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
-        <path d="M28 16l-4-4v8l4-4z" fill="currentColor" opacity="0.4" />
-      </svg>
-    ),
+    title: "Yoga Props Usage",
+    body: "Belts, blocks, bolsters",
   },
   {
     n: "03",
-    title: "Cue & adjust safely",
-    body: "Precise alignment cues, hands-on adjustments, and modifications for every body.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <path d="M8 10c0-4 16-4 16 0v2c0 4-16 4-16 0v-2z" stroke="currentColor" strokeWidth="0.75" />
-        <path d="M16 12v12" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
-        <path d="M10 24c0-4 12-4 12 0" stroke="currentColor" strokeWidth="0.75" />
-      </svg>
-    ),
+    title: "Anatomy & Physiology",
+    body: "Skeletal, muscular, and joint systems",
   },
   {
     n: "04",
-    title: "Understand anatomy basics",
-    body: "Injury prevention, load management, and anatomy knowledge for safer teaching.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <ellipse cx="16" cy="8" rx="4" ry="4" stroke="currentColor" strokeWidth="0.75" />
-        <path d="M8 18c0-5.5 16-5.5 16 0v10H8V18z" stroke="currentColor" strokeWidth="0.75" />
-        <line x1="12" y1="18" x2="12" y2="28" stroke="currentColor" strokeWidth="0.75" />
-        <line x1="20" y1="18" x2="20" y2="28" stroke="currentColor" strokeWidth="0.75" />
-      </svg>
-    ),
+    title: "Philosophy",
+    body: "Yogic lineages, eight limbs, tantra, karma",
   },
   {
     n: "05",
-    title: "Pranayama & meditation",
-    body: "Foundational breathwork and meditation techniques to complete your teaching toolkit.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <path d="M16 4 Q24 16 16 28 Q8 16 16 4z" stroke="currentColor" strokeWidth="0.75" fill="none" />
-        <ellipse cx="16" cy="16" rx="6" ry="6" stroke="currentColor" strokeWidth="0.75" />
-      </svg>
-    ),
+    title: "Yogic Practices",
+    body: "Chakras, mudras, bandhas, nadis",
   },
   {
     n: "06",
-    title: "Yoga philosophy & ethics",
-    body: "Roots of the practice, teaching ethics, and the values that guide responsible instruction.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <rect x="6" y="5" width="20" height="24" rx="1" stroke="currentColor" strokeWidth="0.75" />
-        <line x1="11" y1="12" x2="21" y2="12" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
-        <line x1="11" y1="17" x2="21" y2="17" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
-        <line x1="11" y1="22" x2="16" y2="22" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
-      </svg>
-    ),
+    title: "Pranayama",
+    body: "Breathing techniques including Ujjayi and Nadi Shodhana",
+  },
+  {
+    n: "07",
+    title: "Meditation",
+    body: "Mindfulness practices with journaling",
+  },
+  {
+    n: "08",
+    title: "Teaching Methodology",
+    body: "Classroom dynamics, voice, ethics, demonstrations",
   },
 ];
 
@@ -108,7 +75,7 @@ export default function WhatYoullLearn() {
   const [active, setActive] = useState<"200hr" | "100hr">("200hr");
 
   return (
-    <section id="what-youll-learn" style={{ backgroundColor: "#EFE8DC" }} className="py-20 lg:py-44">
+    <section id="what-youll-learn" style={{ backgroundColor: "#EFE8DC" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Header */}
@@ -125,8 +92,8 @@ export default function WhatYoullLearn() {
                 lineHeight: 1.05,
               }}
             >
-              What You&apos;ll<br />
-              <em style={{ fontStyle: "italic" }}>Learn to Teach</em>
+              What You&apos;ll Learn<br />
+              <em style={{ fontStyle: "italic" }}>in this Training</em>
             </h2>
           </div>
           <p
@@ -175,31 +142,30 @@ export default function WhatYoullLearn() {
 
         {/* 200HR: Pillar grid */}
         {active === "200hr" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ borderTop: "1px solid #DDD0C0", borderLeft: "1px solid #DDD0C0" }}>
-            {PILLARS_200.map(({ n, title, body, icon }) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ borderTop: "1px solid #DDD0C0", borderLeft: "1px solid #DDD0C0" }}>
+            {PILLARS_200.map(({ n, title, body }) => (
               <div
                 key={n}
-                className="p-6 lg:p-12 group transition-colors"
+                className="p-5 lg:p-7 group transition-colors"
                 style={{ borderRight: "1px solid #DDD0C0", borderBottom: "1px solid #DDD0C0" }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(248,244,238,0.7)")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
               >
-                <div className="flex items-start justify-between mb-8">
-                  <div style={{ color: "#A8784A", opacity: 0.6 }}>{icon}</div>
+                <div className="flex items-start justify-end mb-5">
                   <span style={{
                     fontFamily: "var(--font-heading)",
                     fontStyle: "italic",
-                    fontSize: "0.875rem",
+                    fontSize: "0.8125rem",
                     color: "#A8784A",
                     opacity: 0.45,
                   }}>
                     {n}
                   </span>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "1rem", color: "#1A1510", marginBottom: "8px" }}>
+                <h3 style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "0.9375rem", color: "#1A1510", marginBottom: "6px" }}>
                   {title}
                 </h3>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#7A6E64", lineHeight: 1.7 }}>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", color: "#7A6E64", lineHeight: 1.6 }}>
                   {body}
                 </p>
               </div>
@@ -207,36 +173,33 @@ export default function WhatYoullLearn() {
           </div>
         )}
 
-        {/* 100HR: List */}
+        {/* 100HR: Card grid (matching 200HR style) */}
         {active === "100hr" && (
-          <div style={{ border: "1px solid #DDD0C0", backgroundColor: "#F8F4EE" }}>
-            <div className="grid grid-cols-1 sm:grid-cols-2">
-              {CURRICULUM_100.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 px-5 py-5 sm:px-8"
-                  style={{
-                    borderBottom: i < CURRICULUM_100.length - 2 || (CURRICULUM_100.length % 2 !== 0 && i < CURRICULUM_100.length - 1) ? "1px solid #DDD0C0" : "none",
-                    borderRight: i % 2 === 0 ? "1px solid #DDD0C0" : "none",
-                  }}
-                >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ borderTop: "1px solid #DDD0C0", borderLeft: "1px solid #DDD0C0" }}>
+            {CURRICULUM_100.map((item, i) => (
+              <div
+                key={i}
+                className="p-5 lg:p-7 group transition-colors"
+                style={{ borderRight: "1px solid #DDD0C0", borderBottom: "1px solid #DDD0C0" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(248,244,238,0.7)")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                <div className="flex items-start justify-end mb-5">
                   <span style={{
                     fontFamily: "var(--font-heading)",
                     fontStyle: "italic",
-                    fontSize: "0.875rem",
+                    fontSize: "0.8125rem",
                     color: "#A8784A",
-                    opacity: 0.5,
-                    flexShrink: 0,
-                    minWidth: "28px",
+                    opacity: 0.45,
                   }}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span style={{ fontFamily: "var(--font-body)", fontSize: "0.9375rem", fontWeight: 500, color: "#1A1510" }}>
-                    {item}
-                  </span>
                 </div>
-              ))}
-            </div>
+                <h3 style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "0.9375rem", color: "#1A1510" }}>
+                  {item}
+                </h3>
+              </div>
+            ))}
           </div>
         )}
 

@@ -25,7 +25,7 @@ export default function Pricing() {
     ({ fontFamily: "var(--font-body)", fontSize: size, fontWeight: weight, color } as React.CSSProperties);
 
   return (
-    <section id="pricing" style={{ backgroundColor: "#EFE8DC" }} className="py-20 lg:py-44">
+    <section id="pricing" style={{ backgroundColor: "#EFE8DC" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
         {/* Header */}

@@ -9,7 +9,6 @@ const PROOF = [
   "250+ Graduates",
   "37 Countries",
   "Bali · Greece · Zanzibar",
-  "Payment Plans Available",
 ];
 
 export default function Hero() {
@@ -93,9 +92,7 @@ export default function Hero() {
           {/* CTAs */}
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#trainings"
               className="group relative overflow-hidden px-10 py-4"
               style={{ backgroundColor: "#A8784A" }}
             >
