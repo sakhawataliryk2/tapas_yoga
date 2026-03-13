@@ -36,7 +36,7 @@ export default function AboutIntro() {
               }}
               className="mb-10"
             >
-              Tapas Yoga School offers internationally accredited teacher training courses in Bali and Greece, led by highly qualified instructors. Our intimate group settings and hands-on approach have earned us recognition as one of the best yoga teacher training programs worldwide.
+              The Tapas Yoga School is registered with Yoga Alliance, offering internationally accredited teacher training courses led by highly qualified instructors. Our trainings meet the standards for the 200HR Yoga Alliance Certification and the 100HR Yoga Alliance Continuing Education Program (YACEP). The school is proudly recognized as one of the best yoga teacher training courses in Bali and worldwide.
             </p>
 
             {/* Stats row */}
