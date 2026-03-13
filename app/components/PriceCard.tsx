@@ -21,6 +21,7 @@ export default function PriceCard({ productId, productName, tiers, calendly }: P
   const tier = tiers[selectedIdx];
   const displayPrice = tier.earlyBird ?? tier.price;
   const isEarlyBird = !!tier.earlyBird;
+  const hideDeposit = productId === "100hr" && isEarlyBird;
   const depositLabel = tier.deposit ?? "USD 470 deposit to reserve";
 
   function handleBook() {
@@ -94,9 +95,16 @@ export default function PriceCard({ productId, productName, tiers, calendly }: P
               <span style={{ marginLeft: "6px", color: "#A8784A" }}>regular</span>
             </p>
           )}
+          {!hideDeposit && (
           <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", color: "#A8784A", marginTop: "10px" }}>
             {depositLabel}
           </p>
+          )}
+          {hideDeposit && (
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", color: "#A8784A", marginTop: "10px" }}>
+            Full payment required within 24 hours
+          </p>
+          )}
           {tier.note && (
             <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", color: "#7A6E64", marginTop: "6px" }}>
               {tier.note}

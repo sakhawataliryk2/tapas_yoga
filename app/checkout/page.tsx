@@ -18,6 +18,8 @@ export default async function CheckoutPage({
   const priceNum = parseInt(displayPrice.replace(/\D/g, ""));
   const depositLabel = tier.deposit ?? "USD 470 deposit";
   const depositNum = parseInt(depositLabel.replace(/[^0-9]/g, ""));
+  const isEarlyBird = !!tier.earlyBird;
+  const hideDeposit = product.id === "100hr" && isEarlyBird;
 
   const bodyFont: React.CSSProperties = { fontFamily: "var(--font-body)" };
 
@@ -84,9 +86,10 @@ export default async function CheckoutPage({
             Choose how you&apos;d like to pay
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className={`grid grid-cols-1 ${hideDeposit ? "" : "md:grid-cols-2"} gap-4`}>
 
             {/* Option 1: Deposit */}
+            {!hideDeposit && (
             <div style={{ border: "1px solid #DDD0C0", backgroundColor: "#F8F4EE" }}>
               <div className="p-8">
                 <p style={{ ...bodyFont, fontSize: "0.625rem", letterSpacing: "0.2em", fontWeight: 600, color: "#A8784A", textTransform: "uppercase", marginBottom: "16px" }}>
@@ -125,6 +128,7 @@ export default async function CheckoutPage({
                 </a>
               </div>
             </div>
+            )}
 
             {/* Option 2: Pay in full */}
             <div style={{ border: "1px solid #DDD0C0", backgroundColor: "#1A1510", position: "relative" }}>

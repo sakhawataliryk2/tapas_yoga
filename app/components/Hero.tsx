@@ -6,7 +6,6 @@ import { CALENDLY } from "../data/products";
 const MUX_PLAYBACK_ID = "OCh0212rblqv02ZdcToaj00YEYDKddcQL5sOE7xqKLPXvo";
 
 const PROOF = [
-  "5.0 · 28 Google Reviews",
   "250+ Graduates",
   "37 Countries",
   "Bali · Greece · Zanzibar",
@@ -93,7 +92,7 @@ export default function Hero() {
           {/* CTAs */}
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="#trainings"
+              href="#training-details"
               className="group relative overflow-hidden px-10 py-4"
               style={{ backgroundColor: "#A8784A" }}
             >
@@ -129,6 +128,29 @@ export default function Hero() {
                 Watch Video
               </span>
             </button>
+          </div>
+
+          {/* Google Reviews widget */}
+          <div className="mt-14 flex flex-col items-center gap-2">
+            <p style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontSize: "1.125rem", color: "white" }}>
+              The Tapas Yoga School
+            </p>
+            <div className="flex gap-1">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} width="20" height="20" viewBox="0 0 20 20" fill="#FBBC04">
+                  <path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.5L10 14.27l-4.94 2.44.94-5.5-4-3.9 5.53-.8L10 1.5z" />
+                </svg>
+              ))}
+            </div>
+            <a
+              href="https://maps.app.goo.gl/joNzUzQ3rT3X5g446?g_st=iw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              style={{ fontFamily: "var(--font-body)", fontSize: "0.8125rem", color: "rgba(255,255,255,0.6)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.3)" }}
+            >
+              28 Google reviews
+            </a>
           </div>
         </div>
 

@@ -174,7 +174,6 @@ Her teaching is known for clarity, depth, and personal attention. Students value
 ### Payment Notes
 - USD 470 deposit to reserve your spot
 - Remaining balance paid in person at the training
-- Flexible payment plans available
 - USD 200 referral bonus when you refer a friend
 
 ---

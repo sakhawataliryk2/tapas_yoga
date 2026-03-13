@@ -21,12 +21,12 @@ export default function Home() {
       <main>
         <Hero />
         <AboutIntro />
-        <YogaAlliance />
         <Founder />
         <Trainings />
         <TrainingDetails />
-        <WhatYoullLearn />
         <Testimonials />
+        <YogaAlliance />
+        <WhatYoullLearn />
         <TrainingImpressions />
         <Locations />
         <WhatsAppCTA />

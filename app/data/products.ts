@@ -92,7 +92,6 @@ export const PRODUCTS: Product[] = [
     payment: [
       "USD 470 deposit to reserve your spot",
       "Balance due 90 days before the training starts",
-      "Flexible payment plans available",
       "USD 200 referral bonus",
     ],
     earlyBirdRule: "Early bird price when full payment is made 90 days before training start.",
@@ -155,7 +154,6 @@ export const PRODUCTS: Product[] = [
       "USD 470 deposit to reserve your spot",
       "Early bird sign-ups (first 6): full payment due within 24 hours of signing up",
       "Balance due 90 days before the training starts",
-      "Flexible payment plans available",
     ],
     earlyBirdRule: "Early bird price for the first 6 sign-ups per session. Full payment required within 24 hours.",
     callout: "Food & accommodation NOT included",
@@ -176,9 +174,9 @@ export const PRODUCTS: Product[] = [
         { label: "From", value: "$1,880" },
       ],
       images: [
-        { src: "/100hr-1.png", alt: "Advanced sequencing workshop" },
-        { src: "/100hr-2.png", alt: "Hands-on alignment refinement" },
-        { src: "/100hr-3.png", alt: "Teaching methodology in practice" },
+        { src: "/100hr-1.png", alt: "Graduation ceremony" },
+        { src: "/100hr-2.png", alt: "Graduation ceremony" },
+        { src: "/100hr-3.png", alt: "Graduation ceremony" },
         { src: "/100hr-4.png", alt: "Small group intensive session" },
       ],
     },

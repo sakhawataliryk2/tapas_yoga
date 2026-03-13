@@ -7,6 +7,12 @@ const SLIDES = [
   { src: "/impressions-training-2.jpeg", label: "Community & practice" },
 ];
 
+const VIDEOS = [
+  "https://video.gumlet.io/67f02e049eef3d88099c9644/698c35ecfc23d3d76fe7f2bb/download.mp4",
+  "https://video.gumlet.io/67f02e049eef3d88099c9644/698c44af5e94c7f61bedbb8a/download.mp4",
+  "https://video.gumlet.io/67f02e049eef3d88099c9644/698c44afcfb6ef9b9fdb96af/download.mp4",
+];
+
 export default function TrainingImpressions() {
   const [current, setCurrent] = useState(0);
 
@@ -85,6 +91,21 @@ export default function TrainingImpressions() {
               />
             ))}
           </div>
+        </div>
+
+        {/* Training videos */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3">
+          {VIDEOS.map((url, i) => (
+            <div key={i} className="relative overflow-hidden" style={{ aspectRatio: "9/16", backgroundColor: "#1A1510", borderRadius: "12px" }}>
+              <video
+                src={url}
+                controls
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+          ))}
         </div>
 
       </div>
