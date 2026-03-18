@@ -19,8 +19,9 @@ export default async function CheckoutPage({
   const displayPrice = tier.earlyBird ?? tier.price;
   const priceNum = parseInt(displayPrice.replace(/\D/g, ""));
   const depositLabel = tier.deposit ?? "USD 470 deposit";
-  const depositNum = parseInt(depositLabel.replace(/[^0-9]/g, ""));
+  const depositNum = parseInt((depositLabel.match(/USD[\s]?([\d,]+)/)?.[1] ?? "470").replace(/,/g, ""));
   const isEarlyBird = !!tier.earlyBird;
+  const stripeFullUrl = (isEarlyBird && tier.stripeEarlyBirdUrl) ? tier.stripeEarlyBirdUrl : tier.stripeUrl;
   const hideDeposit = product.id === "100hr" && isEarlyBird;
 
   const bodyFont: React.CSSProperties = { fontFamily: "var(--font-body)" };
@@ -117,7 +118,7 @@ export default async function CheckoutPage({
                     <span style={{ ...bodyFont, fontSize: "0.75rem", color: "#7A6E64", fontWeight: 400 }}>USD</span>
                   </p>
                   <p style={{ ...bodyFont, fontSize: "0.75rem", color: "#7A6E64", marginTop: "4px" }}>
-                    Remaining {displayPrice} USD due 90 days before start
+                    Remaining ${(priceNum - depositNum).toLocaleString()} USD due 90 days before start
                   </p>
                 </div>
 
@@ -166,7 +167,7 @@ export default async function CheckoutPage({
                 </div>
 
                 <a
-                  href={product.stripeFullUrl}
+                  href={stripeFullUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center py-4 transition-colors"

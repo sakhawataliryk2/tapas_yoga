@@ -176,7 +176,7 @@ export default function PriceCard({ productId, productName, tiers, sessions, cal
             Book Now →
           </button>
 
-          <button
+          {productId === "200hr" && <button
             onClick={() => setBrochureOpen(true)}
             className="block w-full text-center py-3.5 transition-colors"
             style={{ fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.12em", fontWeight: 500, color: "#7A6E64", textTransform: "uppercase", border: "1px solid #DDD0C0", backgroundColor: "transparent", cursor: "pointer" }}
@@ -184,7 +184,7 @@ export default function PriceCard({ productId, productName, tiers, sessions, cal
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#DDD0C0"; e.currentTarget.style.color = "#7A6E64"; }}
           >
             Get Free Brochure
-          </button>
+          </button>}
 
           <a
             href="https://wa.me/8613816920709"

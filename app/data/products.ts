@@ -19,6 +19,8 @@ export interface Tier {
   note: string;
   featured?: boolean;
   deposit?: string; // override the default deposit label
+  stripeUrl: string;           // full payment link (regular price)
+  stripeEarlyBirdUrl?: string; // full payment link (early bird price)
 }
 
 export interface ProductDetail {
@@ -41,9 +43,7 @@ export interface Product {
   earlyBirdRule?: string;
   callout?: string;    // prominent callout like "Food & accommodation NOT included"
   detail: ProductDetail;
-  // Stripe links — replace placeholders with real product links
   stripeDepositUrl: string;
-  stripeFullUrl: string;
 }
 
 // ── Products ──
@@ -66,6 +66,8 @@ export const PRODUCTS: Product[] = [
         earlyBird: "$3,670",
         note: "2 meals per day included · Own accommodation",
         featured: false,
+        stripeUrl: "https://buy.stripe.com/cNieVcgxC8GK7XK50T2sM0x",
+        stripeEarlyBirdUrl: "https://buy.stripe.com/bJebJ095a9KOa5S0un2sM0u",
       },
       {
         name: "Training + Shared Suite + 2 Meals/Day",
@@ -73,6 +75,8 @@ export const PRODUCTS: Product[] = [
         earlyBird: "$4,170",
         note: "21 nights shared room · 2 meals per day",
         featured: true,
+        stripeUrl: "https://buy.stripe.com/8x27sKdlqg9c0vib912sM0y",
+        stripeEarlyBirdUrl: "https://buy.stripe.com/3cIeVc3KQg9c0vib912sM0v",
       },
       {
         name: "Training + Private Room + 2 Meals/Day",
@@ -80,6 +84,8 @@ export const PRODUCTS: Product[] = [
         earlyBird: "$4,770",
         note: "21 nights private room · 2 meals per day",
         featured: false,
+        stripeUrl: "https://buy.stripe.com/3cI6oG5SY0ae0vi50T2sM0z",
+        stripeEarlyBirdUrl: "https://buy.stripe.com/9B614m4OUg9cce03Gz2sM0w",
       },
     ],
     includes: [
@@ -96,7 +102,6 @@ export const PRODUCTS: Product[] = [
     ],
     earlyBirdRule: "Early bird price when full payment is made 90 days before training start.",
     stripeDepositUrl: STRIPE, // TODO: replace with deposit-only Stripe link
-    stripeFullUrl: STRIPE,    // TODO: replace with full-payment Stripe link
     detail: {
       tagline: "21 days · Canggu, Bali · Yoga Alliance RYS 200",
       description: [
@@ -163,12 +168,15 @@ export const PRODUCTS: Product[] = [
         earlyBird: "$1,880",
         note: "First 6 sign-ups per session",
         featured: true,
+        stripeUrl: "https://buy.stripe.com/cNicN45SY5uyce04KD2sM0B",
+        stripeEarlyBirdUrl: "https://buy.stripe.com/aFa00ia9ef58b9W5OH2sM0A",
       },
       {
         name: "Regular Price",
         price: "$2,280",
         note: "Standard enrollment",
         featured: false,
+        stripeUrl: "https://buy.stripe.com/cNicN45SY5uyce04KD2sM0B",
       },
     ],
     includes: [
@@ -185,7 +193,6 @@ export const PRODUCTS: Product[] = [
     earlyBirdRule: "Early bird price for the first 6 sign-ups per session. Full payment required within 24 hours.",
     callout: "Food & accommodation NOT included",
     stripeDepositUrl: STRIPE, // TODO: replace with deposit-only Stripe link
-    stripeFullUrl: STRIPE,    // TODO: replace with full-payment Stripe link
     detail: {
       tagline: "11 days · Bali & Greece · Yoga Alliance YACEP",
       description: [
@@ -225,6 +232,7 @@ export const PRODUCTS: Product[] = [
         note: "Certificate · Shared accommodation · Breakfast included",
         featured: true,
         deposit: "USD 2,750 deposit to reserve (50%)",
+        stripeUrl: "https://buy.stripe.com/9B6aEWa9e9KO6TGeld2sM0C",
       },
       {
         name: "Certification Only",
@@ -232,6 +240,7 @@ export const PRODUCTS: Product[] = [
         note: "Certificate · No accommodation · No food",
         featured: false,
         deposit: "USD 1,750 deposit to reserve (50%)",
+        stripeUrl: "https://buy.stripe.com/3cIbJ05SY5uyce0dh92sM0D",
       },
       {
         name: "Asana Intensive",
@@ -239,6 +248,7 @@ export const PRODUCTS: Product[] = [
         note: "15 morning intensive asana classes · No certification",
         featured: false,
         deposit: "USD 750 deposit to reserve (50%)",
+        stripeUrl: "https://buy.stripe.com/7sY7sK3KQ0ae2Dq1yr2sM0E",
       },
     ],
     includes: [
@@ -253,7 +263,6 @@ export const PRODUCTS: Product[] = [
       "Remaining balance due 90 days before the training begins",
     ],
     stripeDepositUrl: STRIPE, // TODO: replace with deposit-only Stripe link
-    stripeFullUrl: STRIPE,    // TODO: replace with full-payment Stripe link
     detail: {
       tagline: "21 days · Jambiani, Zanzibar · Indian Ocean",
       description: [

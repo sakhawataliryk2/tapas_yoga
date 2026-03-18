@@ -203,42 +203,6 @@ export default function WhatYoullLearn() {
           </div>
         )}
 
-        {/* PDF download CTA */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 py-8">
-          <div>
-            <p style={{ fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "1rem", color: "#1A1510", marginBottom: "4px" }}>
-              Want the full picture?
-            </p>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#7A6E64" }}>
-              Download the complete curriculum overview as a PDF.
-            </p>
-          </div>
-          <a
-            href={PDF_URL}
-            download
-            className="flex items-center gap-3 px-8 py-3.5 border flex-shrink-0 transition-colors group"
-            style={{ borderColor: "#1A1510", color: "#1A1510" }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#1A1510";
-              e.currentTarget.style.color = "white";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.color = "#1A1510";
-            }}
-          >
-            <PdfIcon />
-            <span style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "0.6875rem",
-              letterSpacing: "0.12em",
-              fontWeight: 600,
-              textTransform: "uppercase",
-            }}>
-              Download Curriculum PDF
-            </span>
-          </a>
-        </div>
       </div>
     </section>
   );

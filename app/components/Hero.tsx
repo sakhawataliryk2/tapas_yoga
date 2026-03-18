@@ -93,7 +93,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-sm sm:max-w-none mx-auto">
             <a
               href="#training-details"
-              className="group relative overflow-hidden px-10 py-4 w-full sm:w-auto text-center"
+              className="group relative overflow-hidden px-10 h-14 flex items-center justify-center w-full sm:w-auto text-center"
               style={{ backgroundColor: "#A8784A" }}
             >
               <span
@@ -110,7 +110,7 @@ export default function Hero() {
 
             <button
               onClick={() => setShowModal(true)}
-              className="flex items-center justify-center gap-3 px-8 py-4 border border-white/25 hover:border-white/50 transition-colors w-full sm:w-auto"
+              className="flex items-center justify-center gap-3 px-10 h-14 border border-white/25 hover:border-white/50 transition-colors w-full sm:w-auto"
               style={{ backgroundColor: "rgba(255,255,255,0.07)", backdropFilter: "blur(8px)" }}
             >
               <span
