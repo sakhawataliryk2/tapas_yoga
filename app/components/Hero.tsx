@@ -23,13 +23,13 @@ export default function Hero() {
       >
         {/* ── Background video ── */}
         <div className="absolute inset-0 overflow-hidden">
-          <video
+          <MuxVideo
+            playbackId={MUX_PLAYBACK_ID}
             autoPlay
             muted
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            src="https://video.gumlet.io/67f02e049eef3d88099c9644/698c36e4aec3d4e4200257e7/download.mp4"
           />
           {/* Multi-layer overlay for depth */}
           <div
@@ -90,10 +90,10 @@ export default function Hero() {
           </h1>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-sm sm:max-w-none mx-auto">
             <a
               href="#training-details"
-              className="group relative overflow-hidden px-10 py-4"
+              className="group relative overflow-hidden px-10 py-4 w-full sm:w-auto text-center"
               style={{ backgroundColor: "#A8784A" }}
             >
               <span
@@ -110,7 +110,7 @@ export default function Hero() {
 
             <button
               onClick={() => setShowModal(true)}
-              className="flex items-center gap-3 px-8 py-4 border border-white/25 hover:border-white/50 transition-colors"
+              className="flex items-center justify-center gap-3 px-8 py-4 border border-white/25 hover:border-white/50 transition-colors w-full sm:w-auto"
               style={{ backgroundColor: "rgba(255,255,255,0.07)", backdropFilter: "blur(8px)" }}
             >
               <span

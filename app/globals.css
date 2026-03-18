@@ -14,9 +14,11 @@
   --font-body:    var(--font-dm-sans), system-ui, -apple-system, sans-serif;
 }
 
-/* ── Reset cursor globally ───────────────────── */
-*, *::before, *::after {
-  cursor: none !important;
+/* ── Reset cursor globally (desktop only) ───── */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
 }
 
 /* ── Base ─────────────────────────────────────── */

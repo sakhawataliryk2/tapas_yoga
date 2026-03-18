@@ -1,19 +1,22 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import type { Tier } from "../data/products";
+import type { Tier, Session } from "../data/products";
 
 interface Props {
   productId: string;
   productName: string;
   tiers: Tier[];
+  sessions: Session[];
   calendly: string;
 }
 
-export default function PriceCard({ productId, productName, tiers, calendly }: Props) {
+export default function PriceCard({ productId, productName, tiers, sessions, calendly }: Props) {
   const router = useRouter();
   const defaultIdx = Math.max(tiers.findIndex((t) => t.featured), 0);
   const [selectedIdx, setSelectedIdx] = useState(defaultIdx);
+  const [selectedSession, setSelectedSession] = useState(sessions.length === 1 ? 0 : -1);
+  const [showSessionError, setShowSessionError] = useState(false);
   const [brochureOpen, setBrochureOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -25,7 +28,12 @@ export default function PriceCard({ productId, productName, tiers, calendly }: P
   const depositLabel = tier.deposit ?? "USD 470 deposit to reserve";
 
   function handleBook() {
-    const params = new URLSearchParams({ product: productId, tier: String(selectedIdx) });
+    if (sessions.length > 1 && selectedSession === -1) {
+      setShowSessionError(true);
+      return;
+    }
+    const sessionIdx = selectedSession === -1 ? 0 : selectedSession;
+    const params = new URLSearchParams({ product: productId, tier: String(selectedIdx), session: String(sessionIdx) });
     router.push(`/checkout?${params.toString()}`);
   }
 
@@ -75,6 +83,50 @@ export default function PriceCard({ productId, productName, tiers, calendly }: P
             </svg>
           </div>
         </div>
+
+        {/* Session selector */}
+        {sessions.length > 1 && (
+          <div className="px-8 pt-6 pb-6 border-b" style={{ borderColor: "#DDD0C0" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.6875rem", letterSpacing: "0.15em", color: "#A8784A", textTransform: "uppercase", marginBottom: "10px" }}>
+              Select Date & Location
+            </p>
+            <div className="relative">
+              <select
+                value={selectedSession}
+                onChange={(e) => { setSelectedSession(Number(e.target.value)); setShowSessionError(false); }}
+                className="w-full appearance-none pr-8"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.9375rem",
+                  fontWeight: 500,
+                  color: selectedSession === -1 ? "#7A6E64" : "#1A1510",
+                  backgroundColor: "transparent",
+                  border: `1px solid ${showSessionError ? "#C0392B" : "#DDD0C0"}`,
+                  padding: "10px 36px 10px 14px",
+                  borderRadius: "0",
+                  cursor: "pointer",
+                  outline: "none",
+                }}
+              >
+                <option value={-1} disabled>Choose a session…</option>
+                {sessions.map((s, i) => (
+                  <option key={i} value={i}>{s.label} — {s.location}</option>
+                ))}
+              </select>
+              <svg
+                width="12" height="12" viewBox="0 0 12 12" fill="none"
+                className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
+              >
+                <path d="M2 4l4 4 4-4" stroke="#A8784A" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            {showSessionError && (
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#C0392B", marginTop: "6px" }}>
+                Please select a date and location to continue.
+              </p>
+            )}
+          </div>
+        )}
 
         {/* Price */}
         <div className="px-8 py-6 border-b" style={{ borderColor: "#DDD0C0" }}>

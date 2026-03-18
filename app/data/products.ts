@@ -112,6 +112,33 @@ export const PRODUCTS: Product[] = [
         { label: "From", value: "$3,670" },
       ],
       images: [
+        // Facilities
+        { src: "/location/pool-area.png", alt: "Pool area" },
+        { src: "/location/pool-area-2.jpg", alt: "Pool area" },
+        // Rooms
+        { src: "/location/room-1.png", alt: "Room" },
+        { src: "/location/standard-villa-bed.png", alt: "Standard villa bedroom" },
+        { src: "/location/standard-villa-living.jpg", alt: "Standard villa living area" },
+        { src: "/location/standard-villa-living-2.jpg", alt: "Standard villa living area" },
+        { src: "/location/standard-villa-bathroom.jpg", alt: "Standard villa bathroom" },
+        { src: "/location/superior-villa-1.jpg", alt: "Superior villa" },
+        { src: "/location/superior-villa-2.jpg", alt: "Superior villa" },
+        { src: "/location/superior-villa-private-pool.jpg", alt: "Superior villa private pool" },
+        { src: "/location/superior-villa-private-jacuzzi.jpg", alt: "Superior villa private jacuzzi" },
+        // Facilities
+        { src: "/location/villa-exterior.jpg", alt: "Villa exterior" },
+        { src: "/location/communal-area.jpg", alt: "Communal area" },
+        { src: "/location/living-room.jpg", alt: "Living room" },
+        { src: "/location/living-room-2.png", alt: "Living room" },
+        // Wellness & food
+        { src: "/location/massage-area.png", alt: "Massage area" },
+        { src: "/location/massage-area-2.png", alt: "Massage area" },
+        { src: "/location/healthy-food.png", alt: "Healthy food" },
+        { src: "/location/healthy-treats.png", alt: "Healthy treats" },
+        // Yoga area (lower quality)
+        { src: "/location/yoga-area.png", alt: "Yoga practice area" },
+        { src: "/location/yoga-area.jpg", alt: "Yoga practice area" },
+        // Graduation photos
         { src: "/200hr-1.png", alt: "200HR training session" },
         { src: "/200hr-2.jpeg", alt: "200HR training session", objectPosition: "center 70%" },
         { src: "/200hr-3.png", alt: "200HR training community" },
@@ -174,6 +201,7 @@ export const PRODUCTS: Product[] = [
         { label: "From", value: "$1,880" },
       ],
       images: [
+        { src: "/bali/1.jpg", alt: "Bali training" },
         { src: "/100hr-1.png", alt: "Graduation ceremony" },
         { src: "/100hr-2.png", alt: "Graduation ceremony" },
         { src: "/100hr-3.png", alt: "Graduation ceremony" },

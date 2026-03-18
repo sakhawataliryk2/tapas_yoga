@@ -134,6 +134,7 @@ export default async function TrainingDetailPage({
                   productId={product.id}
                   productName={product.name}
                   tiers={product.tiers}
+                  sessions={product.sessions}
                   calendly={CALENDLY}
                 />
               </div>
@@ -217,7 +218,7 @@ export default async function TrainingDetailPage({
                     </div>
                     <div className="text-right">
                       <Link
-                        href={`/checkout?product=${product.id}&tier=0`}
+                        href={`/checkout?product=${product.id}&tier=0&session=${i}`}
                         className="inline-block px-6 py-2.5 transition-colors"
                         style={{
                           backgroundColor: "#1A1510",

@@ -24,11 +24,11 @@ const SLIDES: Array<
   | { type: "photo"; src: string; label: string }
   | { type: "gradient"; bg: string; label: string }
 > = [
-  { type: "photo", src: "/location-1.png", label: "Practice space outdoors" },
-  { type: "photo", src: "/location-2.png", label: "Rooms" },
-  { type: "photo", src: "/location-3.png", label: "Massage on site" },
-  { type: "photo", src: "/location-4.png", label: "Living area" },
-  { type: "photo", src: "/location-5.png", label: "Tapas Yoga School" },
+  { type: "photo", src: "/location/yoga-area.png", label: "Yoga shala" },
+  { type: "photo", src: "/location/pool-area.png", label: "Pool area" },
+  { type: "photo", src: "/location/living-room.jpg", label: "Living area" },
+  { type: "photo", src: "/location/massage-area.png", label: "Massage on site" },
+  { type: "photo", src: "/location/villa-exterior.jpg", label: "Villa exterior" },
 ];
 
 export default function Locations() {
@@ -132,9 +132,9 @@ export default function Locations() {
             </h2>
             <p
               style={{ fontFamily: "var(--font-body)", fontSize: "1.0625rem", color: "#7A6E64", lineHeight: 1.75 }}
-              className="mb-14"
+              className="mb-8"
             >
-              From Bali to Greece to Zanzibar — after hosting 35+ trainings, we
+              From Bali to Greece to Zanzibar. After hosting 35+ trainings, we
               carefully choose spaces that truly support focus, learning, and
               transformation.
             </p>

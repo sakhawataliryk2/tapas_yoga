@@ -1,10 +1,16 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Cursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
+  const [isPointerFine, setIsPointerFine] = useState(false);
 
   useEffect(() => {
+    setIsPointerFine(window.matchMedia("(pointer: fine)").matches);
+  }, []);
+
+  useEffect(() => {
+    if (!isPointerFine) return;
     const move = (e: MouseEvent) => {
       if (!cursorRef.current) return;
       cursorRef.current.style.left = `${e.clientX}px`;
@@ -12,7 +18,9 @@ export default function Cursor() {
     };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
-  }, []);
+  }, [isPointerFine]);
+
+  if (!isPointerFine) return null;
 
   return (
     <div

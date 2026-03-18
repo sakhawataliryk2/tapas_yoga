@@ -6,14 +6,16 @@ import Footer from "../components/Footer";
 export default async function CheckoutPage({
   searchParams,
 }: {
-  searchParams: Promise<{ product?: string; tier?: string }>;
+  searchParams: Promise<{ product?: string; tier?: string; session?: string }>;
 }) {
-  const { product: productId, tier: tierParam } = await searchParams;
+  const { product: productId, tier: tierParam, session: sessionParam } = await searchParams;
   const product = PRODUCTS.find((p) => p.id === productId);
   if (!product) notFound();
 
   const tierIdx = Math.max(0, Math.min(parseInt(tierParam ?? "0"), product.tiers.length - 1));
   const tier = product.tiers[tierIdx];
+  const sessionIdx = Math.max(0, Math.min(parseInt(sessionParam ?? "0"), product.sessions.length - 1));
+  const session = product.sessions[sessionIdx];
   const displayPrice = tier.earlyBird ?? tier.price;
   const priceNum = parseInt(displayPrice.replace(/\D/g, ""));
   const depositLabel = tier.deposit ?? "USD 470 deposit";
@@ -69,6 +71,8 @@ export default async function CheckoutPage({
             <div className="divide-y" style={{ borderColor: "#DDD0C0" }}>
               {[
                 { label: "Program", value: product.name },
+                { label: "Dates", value: session.label },
+                { label: "Location", value: session.location },
                 { label: "Package", value: tier.name },
                 { label: "Details", value: tier.note },
                 { label: "Total price", value: `${displayPrice} USD${tier.earlyBird ? " (early bird)" : ""}` },
