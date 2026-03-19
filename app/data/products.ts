@@ -117,6 +117,10 @@ export const PRODUCTS: Product[] = [
         { label: "From", value: "$3,670" },
       ],
       images: [
+        // Bali
+        { src: "/bali/1.jpg", alt: "Bali" },
+        { src: "/bali/2.jpg", alt: "Bali" },
+        { src: "/bali/3.jpg", alt: "Bali" },
         // Facilities
         { src: "/location/pool-area.png", alt: "Pool area" },
         { src: "/location/pool-area-2.jpg", alt: "Pool area" },
@@ -208,7 +212,8 @@ export const PRODUCTS: Product[] = [
         { label: "From", value: "$1,880" },
       ],
       images: [
-        { src: "/bali/1.jpg", alt: "Bali training" },
+        { src: "/bali/2.jpg", alt: "Bali" },
+        { src: "/bali/3.jpg", alt: "Bali" },
         { src: "/100hr-1.png", alt: "Graduation ceremony" },
         { src: "/100hr-2.png", alt: "Graduation ceremony" },
         { src: "/100hr-3.png", alt: "Graduation ceremony" },

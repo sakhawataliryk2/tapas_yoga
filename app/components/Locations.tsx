@@ -29,6 +29,7 @@ const SLIDES: Array<
   { type: "photo", src: "/location/living-room.jpg", label: "Living area" },
   { type: "photo", src: "/location/massage-area.png", label: "Massage on site" },
   { type: "photo", src: "/location/villa-exterior.jpg", label: "Villa exterior" },
+  { type: "photo", src: "/bali/2.jpg", label: "Bali" },
 ];
 
 export default function Locations() {
