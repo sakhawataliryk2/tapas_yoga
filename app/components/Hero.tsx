@@ -3,7 +3,7 @@ import { useState } from "react";
 import MuxVideo from "@mux/mux-video-react";
 import { CALENDLY } from "../data/products";
 
-const MUX_PLAYBACK_ID = "OCh0212rblqv02ZdcToaj00YEYDKddcQL5sOE7xqKLPXvo";
+const MUX_PLAYBACK_ID = "5QdowRqIgOsDYmwp4f9InHyNnHvfpNE2ii9VcZD958Q";
 
 const PROOF = [
   "250+ Graduates",
