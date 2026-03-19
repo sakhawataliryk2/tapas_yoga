@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Cursor from "./components/Cursor";
+import { Analytics } from "@vercel/analytics/next";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={`${cormorant.variable} ${dmSans.variable}`}>
         <Cursor />
         {children}
+        <Analytics />
       </body>
     </html>
   );
