@@ -127,35 +127,68 @@ export default function Nav() {
       {/* Mobile menu */}
       {menuOpen && (
         <div
-          className="md:hidden px-6 py-8 flex flex-col gap-6 border-t"
-          style={{ backgroundColor: "#F8F4EE", borderColor: "#DDD0C0" }}
+          className="md:hidden fixed inset-0 z-50 flex flex-col"
+          style={{ backgroundColor: "#F8F4EE" }}
         >
-          {NAV_LINKS.map((navLink) => (
-            <a
-              key={navLink.label}
-              href={link(navLink.href)}
-              className="text-muted"
-              style={bodyFont}
-              onClick={() => setMenuOpen(false)}
-            >
-              {navLink.label}
+          {/* Close button */}
+          <div className="px-6 h-20 flex items-center justify-between">
+            <a href={isHome ? "#" : "/"} className="flex items-center" style={{ opacity: 0.92 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-clay.svg"
+                alt="The Tapas Yoga School"
+                style={{ height: "44px", width: "auto" }}
+              />
             </a>
-          ))}
-          <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-center py-3"
-            style={{
-              ...bodyFont,
-              backgroundColor: "#A8784A",
-              color: "white",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-            }}
-          >
-            Book a Call
-          </a>
+            <button
+              className="p-2"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1510" strokeWidth="1.5">
+                <line x1="4" y1="4" x2="20" y2="20" />
+                <line x1="20" y1="4" x2="4" y2="20" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Links */}
+          <div className="flex-1 flex flex-col items-center justify-center gap-8">
+            {NAV_LINKS.map((navLink) => (
+              <a
+                key={navLink.label}
+                href={link(navLink.href)}
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "1rem",
+                  letterSpacing: "0.12em",
+                  fontWeight: 500,
+                  color: "#7A6E64",
+                  textTransform: "uppercase",
+                }}
+                onClick={() => setMenuOpen(false)}
+              >
+                {navLink.label}
+              </a>
+            ))}
+            <a
+              href={CALENDLY}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center px-10 py-3 mt-4"
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.85rem",
+                letterSpacing: "0.18em",
+                fontWeight: 500,
+                backgroundColor: "#A8784A",
+                color: "white",
+                textTransform: "uppercase",
+              }}
+            >
+              Book a Call
+            </a>
+          </div>
         </div>
       )}
     </nav>
