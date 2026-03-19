@@ -198,7 +198,7 @@ export default function Hero() {
               CLOSE ✕
             </button>
             <div className="aspect-video w-full">
-              <MuxVideo playbackId={MUX_PLAYBACK_ID} controls autoPlay className="w-full h-full" />
+              <MuxVideo playbackId="YnmcoqKrWNj9mTlRKr01RIXsfpUrcCj5n51hP8JOe4Kg" controls autoPlay className="w-full h-full" />
             </div>
           </div>
         </div>
