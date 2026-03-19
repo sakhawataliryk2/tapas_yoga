@@ -40,7 +40,7 @@ export default function Trainings() {
           <p style={{ fontFamily: "var(--font-body)", fontSize: "1.0625rem", color: "#7A6E64", lineHeight: 1.75 }}
             className="max-w-lg mx-auto"
           >
-            Choose the training that matches your journey — from foundation certification to advanced specialization.
+            Choose the training that matches your journey, from foundation certification to advanced specialization.
           </p>
         </div>
 

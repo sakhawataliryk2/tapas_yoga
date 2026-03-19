@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "The Tapas Yoga School — Yoga Teacher Training | Bali, Greece & Zanzibar",
+  title: "The Tapas Yoga School | Yoga Teacher Training | Bali, Greece & Zanzibar",
   description:
     "Yoga Alliance Certified Teacher Trainings in Bali, Greece & Zanzibar. 200HR Foundation, 100HR Advanced, and Zanzibar TTC. Join Vivienne Zeng and 250+ graduates from 37 countries.",
 };

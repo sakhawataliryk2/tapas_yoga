@@ -4,15 +4,15 @@ import { useState } from "react";
 const FAQS = [
   {
     q: "Do I need to want to become a teacher?",
-    a: "No. Many students join to deepen their practice, build confidence, and immerse themselves in yoga — teaching is optional.",
+    a: "No. Many students join to deepen their practice, build confidence, and immerse themselves in yoga. Teaching is optional.",
   },
   {
     q: "What are the prerequisites?",
     a: "For the 200h, we recommend at least 1 year of consistent practice, but it's not a strict requirement. If you're unsure, message us and we'll guide you.",
   },
   {
-    q: "Is the training physically intense — do I need advanced poses?",
-    a: "You'll be challenged but the focus is safe alignment, intelligent progress and strong foundations — not extreme postures. Modifications are always available.",
+    q: "Is the training physically intense? Do I need advanced poses?",
+    a: "You'll be challenged but the focus is safe alignment, intelligent progress and strong foundations, not extreme postures. Modifications are always available.",
   },
   {
     q: "What's included (accommodation & meals)?",
@@ -23,12 +23,12 @@ const FAQS = [
     a: "The 200h is Yoga Alliance eligible (where applicable). The 100h is typically offered as Yoga Alliance Continuing Education (YACEP).",
   },
   {
-    q: "How do payments work — deposit and payment plans?",
+    q: "How do payments work? Deposit and payment plans?",
     a: "A $470 deposit secures your spot, and payment plans are available for the remaining balance.",
   },
   {
     q: "What is your cancellation / transfer policy?",
-    a: "For the 200HR and 100HR trainings, the $470 deposit is non-refundable but can be transferred to a future training. For the Zanzibar TTC, a 50% deposit is required to reserve your place — it is non-refundable but may be transferred to another student. The remaining balance is due 90 days before training begins.",
+    a: "For the 200HR and 100HR trainings, the $470 deposit is non-refundable but can be transferred to a future training. For the Zanzibar TTC, a 50% deposit is required to reserve your place. It is non-refundable but may be transferred to another student. The remaining balance is due 90 days before training begins.",
   },
   {
     q: "Can I work or stay connected during the training?",
@@ -36,11 +36,11 @@ const FAQS = [
   },
   {
     q: "What's the difference between the 200HR and 100HR training?",
-    a: "The 200HR Foundation is a complete certification for aspiring yoga teachers — it covers everything from asana to philosophy to teaching methodology over 21 days. The 100HR Advanced is designed for graduates who want to deepen their skills with advanced sequencing, alignment, and teaching techniques over 11 days.",
+    a: "The 200HR Foundation is a complete certification for aspiring yoga teachers. It covers everything from asana to philosophy to teaching methodology over 21 days. The 100HR Advanced is designed for graduates who want to deepen their skills with advanced sequencing, alignment, and teaching techniques over 11 days.",
   },
   {
     q: "Is accommodation included in all trainings?",
-    a: "It depends on the program. The 200HR Bali training offers all-inclusive packages with accommodation and meals. The 100HR Advanced does not include accommodation — you arrange your own stay. The Zanzibar TTC offers three options: certification with shared accommodation & breakfast ($5,500), certification without accommodation ($3,500), or a 15-class asana intensive without certification ($1,500).",
+    a: "It depends on the program. The 200HR Bali training offers all-inclusive packages with accommodation and meals. The 100HR Advanced does not include accommodation, so you arrange your own stay. The Zanzibar TTC offers three options: certification with shared accommodation & breakfast ($5,500), certification without accommodation ($3,500), or a 15-class asana intensive without certification ($1,500).",
   },
 ];
 

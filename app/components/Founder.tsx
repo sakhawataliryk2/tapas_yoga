@@ -33,20 +33,39 @@ export default function Founder() {
     <section id="founder" style={{ backgroundColor: "#F8F4EE" }} className="py-16 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
-        {/* ── Two-column: photo + bio ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start mb-16 lg:mb-20">
+        {/* ── Mobile: stacked flow / Desktop: two-column grid ── */}
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-x-12 lg:gap-y-0 lg:items-start mb-16 lg:mb-20">
 
-          {/* Left col — portrait (5 cols) */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          {/* Label + heading — shown first on mobile, part of right col on desktop */}
+          <div className="lg:col-span-6 lg:col-start-7 lg:pt-4 order-1 lg:row-start-1">
+            <div className="label mb-10">Lead Instructor</div>
+
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontWeight: 400,
+                fontSize: "clamp(2.5rem, 4.5vw, 4rem)",
+                color: "#1A1510",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
+              }}
+              className="mb-0 lg:mb-10"
+            >
+              Vivienne Zeng
+            </h2>
+          </div>
+
+          {/* Portrait — second on mobile, left col spanning all rows on desktop */}
+          <div className="lg:col-span-5 lg:row-start-1 lg:row-end-3 order-2">
             <div
               className="relative w-full overflow-hidden"
-              style={{ aspectRatio: "4/5" }}
             >
               <Image
                 src="/meet-the-teacher.jpg"
                 alt="Vivienne Zeng — Founder & Lead Instructor"
-                fill
-                className="object-cover object-center"
+                width={800}
+                height={1000}
+                className="w-full h-auto"
                 sizes="(max-width: 1024px) 100vw, 42vw"
                 priority
               />
@@ -81,24 +100,8 @@ export default function Founder() {
             </div>
           </div>
 
-          {/* Right col — bio (6 cols, offset) */}
-          <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 lg:pt-4">
-            <div className="label mb-10">Lead Instructor</div>
-
-            <h2
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontWeight: 400,
-                fontSize: "clamp(2.5rem, 4.5vw, 4rem)",
-                color: "#1A1510",
-                letterSpacing: "-0.02em",
-                lineHeight: 1.1,
-              }}
-              className="mb-10"
-            >
-              Vivienne Zeng
-            </h2>
-
+          {/* Bio text + credentials + CTAs — third on mobile, continues right col on desktop */}
+          <div className="lg:col-span-6 lg:col-start-7 lg:row-start-2 order-3">
             <div
               style={{ fontFamily: "var(--font-body)", fontSize: "1.0625rem", color: "#7A6E64", lineHeight: 1.82 }}
               className="space-y-5 mb-12"
@@ -113,7 +116,7 @@ export default function Founder() {
               <p>
                 Her teaching is known for clarity, depth, and personal attention. Students
                 value her ability to read the body, adapt practices individually, and
-                support safe, sustainable progress — both physically and mentally.
+                support safe, sustainable progress, both physically and mentally.
               </p>
             </div>
 
@@ -124,7 +127,7 @@ export default function Founder() {
                   <div className="w-1 h-1 rounded-full bg-clay mt-2.5 flex-shrink-0" />
                   <p style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", color: "#7A6E64", lineHeight: 1.6 }}>
                     <strong style={{ color: "#1A1510", fontWeight: 500 }}>{label}</strong>
-                    {" — "}{detail}
+                    {": "}{detail}
                   </p>
                 </div>
               ))}

@@ -110,7 +110,7 @@ export default function PriceCard({ productId, productName, tiers, sessions, cal
               >
                 <option value={-1} disabled>Choose a session…</option>
                 {sessions.map((s, i) => (
-                  <option key={i} value={i}>{s.label} — {s.location}</option>
+                  <option key={i} value={i}>{s.label} | {s.location}</option>
                 ))}
               </select>
               <svg

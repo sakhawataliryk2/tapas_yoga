@@ -151,7 +151,7 @@ export default async function CheckoutPage({
                   Pay in Full
                 </h3>
                 <p style={{ ...bodyFont, fontSize: "0.875rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: "24px" }}>
-                  Pay the full amount today and have complete peace of mind — nothing left to worry about before your training.
+                  Pay the full amount today and have complete peace of mind. Nothing left to worry about before your training.
                 </p>
 
                 {/* Full amount */}

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const FEATURES = [
-  { title: "Official RYS Registration", body: "Formally registered with Yoga Alliance — verifiable, legitimate, and respected worldwide." },
+  { title: "Official RYS Registration", body: "Formally registered with Yoga Alliance. Verifiable, legitimate, and respected worldwide." },
   { title: "Certificate on Graduation", body: "Receive your official 200-hour certificate upon completing the program." },
   { title: "Recognized Worldwide", body: "Your qualification holds weight wherever you choose to teach or continue your training." },
 ];
@@ -49,7 +49,7 @@ export default function YogaAlliance() {
               style={{ fontFamily: "var(--font-body)", fontSize: "1.0625rem", color: "#7A6E64", lineHeight: 1.8 }}
               className="mb-14 max-w-md"
             >
-              An official RYS certification recognized worldwide — so your qualification
+              An official RYS certification recognized worldwide so your qualification
               carries weight wherever you choose to teach.
             </p>
 
