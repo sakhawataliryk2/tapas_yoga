@@ -100,6 +100,14 @@ export default function Footer() {
           <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "#7A6E64", letterSpacing: "0.04em" }}>
             © 2026 The Tapas Yoga School. All rights reserved.
           </p>
+          <a
+            href="/terms"
+            style={{ fontFamily: "var(--font-body)", fontSize: "0.6875rem", color: "#7A6E64", letterSpacing: "0.04em", marginTop: "6px", display: "inline-block" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#1A1510")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#7A6E64")}
+          >
+            Terms &amp; Conditions
+          </a>
         </div>
       </div>
     </footer>
