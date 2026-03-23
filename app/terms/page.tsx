@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | The Tapas Yoga School",
-  description: "Terms and Conditions for PT East West Yoga Teacher Training Programs.",
+  description: "Terms and Conditions for Tapas Yoga School Teacher Training Programs.",
 };
 
 export default function TermsPage() {
@@ -39,13 +39,13 @@ export default function TermsPage() {
             Terms &amp; Conditions
           </h1>
           <p style={{ ...body, color: "#7A6E64", marginBottom: "48px" }}>
-            PT East West Yoga &ndash; Yoga Teacher Training Programs
+            Tapas Yoga School &ndash; Yoga Teacher Training Programs
           </p>
 
           <p style={{ ...body, marginBottom: "40px" }}>
             These Terms and Conditions (&ldquo;Terms&rdquo;) govern participation in any yoga teacher training
-            programs (&ldquo;Training&rdquo;) offered by PT East West Yoga (&ldquo;East West Yoga,&rdquo;
-            &ldquo;we,&rdquo; &ldquo;our,&rdquo; &ldquo;us&rdquo;). By enrolling in a Training, you
+            programs (&ldquo;Training&rdquo;) offered by Tapas Yoga School (&ldquo;we,&rdquo; &ldquo;our,&rdquo;
+            &ldquo;us&rdquo;). By enrolling in a Training, you
             (&ldquo;student,&rdquo; &ldquo;participant,&rdquo; or &ldquo;you&rdquo;) agree to abide by these Terms.
           </p>
 
@@ -95,7 +95,7 @@ export default function TermsPage() {
                   travel disruption, or withdrawal.
                 </li>
                 <li>
-                  If East West Yoga cancels or reschedules the Training, students may choose a transfer to a future
+                  If Tapas Yoga School cancels or reschedules the Training, students may choose a transfer to a future
                   program or a full refund of tuition paid.
                 </li>
               </ul>
@@ -133,7 +133,7 @@ export default function TermsPage() {
                   refund.
                 </li>
                 <li>
-                  East West Yoga reserves the right to dismiss any student whose behavior is deemed unsafe,
+                  Tapas Yoga School reserves the right to dismiss any student whose behavior is deemed unsafe,
                   inappropriate, or harmful to the community.
                 </li>
               </ul>
@@ -151,7 +151,7 @@ export default function TermsPage() {
                   participate.
                 </li>
                 <li>
-                  You release East West Yoga, its trainers, and affiliates from liability for any injury, illness, or
+                  You release Tapas Yoga School, its trainers, and affiliates from liability for any injury, illness, or
                   damages sustained during or as a result of the Training.
                 </li>
                 <li>
@@ -170,7 +170,7 @@ export default function TermsPage() {
                   meals not explicitly included in the Training package.
                 </li>
                 <li>
-                  East West Yoga is not liable for travel delays, natural disasters, pandemics, or other events outside
+                  Tapas Yoga School is not liable for travel delays, natural disasters, pandemics, or other events outside
                   its control.
                 </li>
               </ul>
@@ -181,7 +181,7 @@ export default function TermsPage() {
               <h2 style={sectionTitle}>8. Intellectual Property</h2>
               <ul style={body} className="list-disc pl-5 space-y-2">
                 <li>
-                  Training manuals, recordings, and materials provided by East West Yoga are for personal study only.
+                  Training manuals, recordings, and materials provided by Tapas Yoga School are for personal study only.
                 </li>
                 <li>Reproduction, distribution, or commercial use without written consent is prohibited.</li>
               </ul>
@@ -206,7 +206,7 @@ export default function TermsPage() {
               <h2 style={sectionTitle}>10. Force Majeure &amp; COVID-19 Policy</h2>
               <ul style={body} className="list-disc pl-5 space-y-2">
                 <li>
-                  East West Yoga shall not be liable or deemed in breach of these Terms for any delay, cancellation, or
+                  Tapas Yoga School shall not be liable or deemed in breach of these Terms for any delay, cancellation, or
                   modification of the Training due to events beyond its reasonable control, including but not limited to
                   natural disasters, acts of God, war, civil unrest, labor disputes, government restrictions, pandemics,
                   public health emergencies, or transportation interruptions.
@@ -236,11 +236,11 @@ export default function TermsPage() {
               <ul style={body} className="list-disc pl-5 space-y-2">
                 <li>
                   Students agree not to post, publish, or distribute training materials, manuals, or proprietary content
-                  from PT East West Yoga on social media, websites, or other platforms without prior written consent.
+                  from Tapas Yoga School on social media, websites, or other platforms without prior written consent.
                 </li>
                 <li>
                   Sharing short, personal reflections or non-sensitive photos is welcome, but content that misrepresents
-                  East West Yoga, its teachers, or fellow students is strictly prohibited.
+                  Tapas Yoga School, its teachers, or fellow students is strictly prohibited.
                 </li>
                 <li>
                   Any posts, videos, or commentary that disparage, defame, or otherwise harm the reputation of East West
@@ -252,7 +252,7 @@ export default function TermsPage() {
                   (such as social media managers, influencers, or family/friends).
                 </li>
                 <li>
-                  East West Yoga reserves the right to request removal of any unauthorized or harmful content, and
+                  Tapas Yoga School reserves the right to request removal of any unauthorized or harmful content, and
                   violation of this clause may result in legal action.
                 </li>
               </ul>
@@ -263,7 +263,7 @@ export default function TermsPage() {
               <h2 style={sectionTitle}>12. Changes to Terms &amp; Conditions</h2>
               <ul style={body} className="list-disc pl-5 space-y-2">
                 <li>
-                  PT East West Yoga reserves the right to update, amend, or modify these Terms and Conditions at any
+                  Tapas Yoga School reserves the right to update, amend, or modify these Terms and Conditions at any
                   time without prior notice.
                 </li>
                 <li>Any changes will be effective immediately upon posting to our website.</li>
@@ -284,7 +284,7 @@ export default function TermsPage() {
               <ul style={body} className="list-disc pl-5 space-y-2">
                 <li>These Terms are governed by the laws of Indonesia.</li>
                 <li>
-                  Any disputes will be resolved in the jurisdiction where East West Yoga is registered (Bali, Indonesia).
+                  Any disputes will be resolved in the jurisdiction where Tapas Yoga School is registered (Bali, Indonesia).
                 </li>
               </ul>
             </section>
