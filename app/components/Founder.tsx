@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 
-import { CALENDLY, INSTAGRAM } from "../data/products";
+import { INSTAGRAM } from "../data/products";
+import CalendlyPopup from "./CalendlyPopup";
 
 const CREDS = [
   { label: "Yoga Alliance Certified", detail: "RYT 200, E-RYT 500, YACEP" },
@@ -135,14 +136,11 @@ export default function Founder() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
-              <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noopener noreferrer"
+              <CalendlyPopup
                 className="flex items-center gap-2.5 px-8 py-3.5 transition-colors"
                 style={{ backgroundColor: "#A8784A", color: "white" }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8A6038")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A8784A")}
+                onMouseEnter={(e: any) => (e.currentTarget.style.backgroundColor = "#8A6038")}
+                onMouseLeave={(e: any) => (e.currentTarget.style.backgroundColor = "#A8784A")}
               >
                 <CalendarIcon />
                 <span style={{
@@ -154,7 +152,7 @@ export default function Founder() {
                 }}>
                   Free Discovery Call
                 </span>
-              </a>
+              </CalendlyPopup>
               <a
                 href={INSTAGRAM}
                 target="_blank"

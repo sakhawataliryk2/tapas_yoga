@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import MuxVideo from "@mux/mux-video-react";
-import { CALENDLY } from "../data/products";
 
 const MUX_PLAYBACK_ID = "DEdxxlb9po6l7d42ucrTA4q00uE2hqQ801SZ00QW2aPqqM";
 

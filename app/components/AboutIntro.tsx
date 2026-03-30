@@ -1,6 +1,3 @@
-"use client";
-import { CALENDLY } from "../data/products";
-
 
 export default function AboutIntro() {
   return (
