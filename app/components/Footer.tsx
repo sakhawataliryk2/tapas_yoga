@@ -1,6 +1,7 @@
 "use client";
 
-import { INSTAGRAM, WHATSAPP, CALENDLY } from "../data/products";
+import { INSTAGRAM, WHATSAPP } from "../data/products";
+import CalendlyPopup from "./CalendlyPopup";
 
 export default function Footer() {
   const linkStyle: React.CSSProperties = {
@@ -67,14 +68,11 @@ export default function Footer() {
               </svg>
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
+            <CalendlyPopup
               className="flex items-center gap-2 p-2.5 sm:px-5 sm:py-2.5 transition-colors"
               style={{ backgroundColor: "#A8784A", color: "white" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8A6038")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A8784A")}
+              onMouseEnter={(e: any) => (e.currentTarget.style.backgroundColor = "#8A6038")}
+              onMouseLeave={(e: any) => (e.currentTarget.style.backgroundColor = "#A8784A")}
             >
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none" className="flex-shrink-0">
                 <rect x="1" y="2.5" width="13" height="11.5" rx="1" stroke="currentColor" strokeWidth="1" />
@@ -91,7 +89,7 @@ export default function Footer() {
               }}>
                 Book a Call
               </span>
-            </a>
+            </CalendlyPopup>
           </div>
         </div>
 

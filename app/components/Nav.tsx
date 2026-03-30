@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-import { CALENDLY } from "../data/products";
+import CalendlyPopup from "./CalendlyPopup";
 
 const NAV_LINKS = [
   { label: "About Us", href: "#about" },
@@ -82,10 +82,7 @@ export default function Nav() {
               {navLink.label}
             </a>
           ))}
-          <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noopener noreferrer"
+          <CalendlyPopup
             className="px-6 py-2.5 transition-colors"
             style={{
               ...bodyFont,
@@ -94,15 +91,15 @@ export default function Nav() {
               letterSpacing: "0.18em",
               textTransform: "uppercase",
             }}
-            onMouseEnter={(e) =>
+            onMouseEnter={(e: any) =>
               (e.currentTarget.style.backgroundColor = "#8A6038")
             }
-            onMouseLeave={(e) =>
+            onMouseLeave={(e: any) =>
               (e.currentTarget.style.backgroundColor = "#A8784A")
             }
           >
             Book a Call
-          </a>
+          </CalendlyPopup>
         </div>
 
         {/* Mobile burger */}
@@ -171,10 +168,7 @@ export default function Nav() {
                 {navLink.label}
               </a>
             ))}
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
+            <CalendlyPopup
               className="text-center px-10 py-3 mt-4"
               style={{
                 fontFamily: "var(--font-body)",
@@ -187,7 +181,7 @@ export default function Nav() {
               }}
             >
               Book a Call
-            </a>
+            </CalendlyPopup>
           </div>
         </div>
       )}

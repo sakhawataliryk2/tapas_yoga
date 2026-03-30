@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { CALENDLY, getNextSession, getAllUpcomingSessions } from "../data/products";
+import { getNextSession, getAllUpcomingSessions } from "../data/products";
+import CalendlyPopup from "./CalendlyPopup";
 
 function pad(n: number) {
   return String(n).padStart(2, "0");
@@ -215,14 +216,11 @@ export default function TrainingDetails() {
           ))}
         </div>
 
-        <a
-          href={CALENDLY}
-          target="_blank"
-          rel="noopener noreferrer"
+        <CalendlyPopup
           className="inline-block px-12 py-4 mb-6"
           style={{ backgroundColor: "#A8784A" }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8A6038")}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A8784A")}
+          onMouseEnter={(e: any) => (e.currentTarget.style.backgroundColor = "#8A6038")}
+          onMouseLeave={(e: any) => (e.currentTarget.style.backgroundColor = "#A8784A")}
         >
           <span
             style={{
@@ -236,7 +234,7 @@ export default function TrainingDetails() {
           >
             Apply Now
           </span>
-        </a>
+        </CalendlyPopup>
       </div>
     </section>
   );
