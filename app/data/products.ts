@@ -6,9 +6,9 @@ export const INSTAGRAM = "https://www.instagram.com/vivienne_zeng/";
 
 // ── Types ──
 export interface Session {
-  start: string;
-  end: string;
-  label: string;
+  start: string; // ISO date
+  end: string;   // ISO date
+  label: string; // e.g. "Apr 5 – Apr 25"
   location: string;
 }
 
@@ -18,9 +18,9 @@ export interface Tier {
   earlyBird?: string;
   note: string;
   featured?: boolean;
-  deposit?: string;
-  stripeUrl: string;
-  stripeEarlyBirdUrl?: string;
+  deposit?: string; // override the default deposit label
+  stripeUrl: string;           // full payment link (regular price)
+  stripeEarlyBirdUrl?: string; // full payment link (early bird price)
 }
 
 export interface ProductDetail {

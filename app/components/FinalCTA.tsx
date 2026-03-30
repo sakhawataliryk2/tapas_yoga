@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import CalendlyPopup from "./CalendlyPopup";
+import { CALENDLY } from "../data/products";
 
 export default function FinalCTA() {
   return (
@@ -76,11 +76,14 @@ export default function FinalCTA() {
               Schedule a free call with our training director.
             </p>
 
-            <CalendlyPopup
+            <a
+              href={CALENDLY}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block transition-colors"
               style={{ backgroundColor: "#A8784A", padding: "16px 56px" }}
-              onMouseEnter={(e: any) => (e.currentTarget.style.backgroundColor = "#8A6038")}
-              onMouseLeave={(e: any) => (e.currentTarget.style.backgroundColor = "#A8784A")}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#8A6038")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#A8784A")}
             >
               <span style={{
                 fontFamily: "var(--font-body)",
@@ -92,7 +95,7 @@ export default function FinalCTA() {
               }}>
                 Schedule a Call
               </span>
-            </CalendlyPopup>
+            </a>
           </div>
         </div>
       </div>
