@@ -2,7 +2,7 @@
 import { useState } from "react";
 import MuxVideo from "@mux/mux-video-react";
 
-const MUX_PLAYBACK_ID = "DEdxxlb9po6l7d42ucrTA4q00uE2hqQ801SZ00QW2aPqqM";
+const MUX_PLAYBACK_ID = "HRILiZLZP0299d029YU700fsFVeLIy2Kq5B8BwwSF02lZQs";
 
 const PROOF = [
   "250+ Graduates",
@@ -197,7 +197,7 @@ export default function Hero() {
               CLOSE ✕
             </button>
             <div className="aspect-video w-full">
-              <MuxVideo playbackId="YpJU8lcSEKpzjOAS74Cbx6tmQnq3IOO01VMjYXjKNXNI" controls autoPlay className="w-full h-full" />
+              <MuxVideo playbackId={MUX_PLAYBACK_ID} controls autoPlay className="w-full h-full" />
             </div>
           </div>
         </div>
